@@ -28,10 +28,11 @@
 
         <div class="card-body">
             <div class="form-row">
+
                 <!--Type-->
                 <div class="form-group col-md-2">
                     <label for="type">Tipo</label>
-                    <select name="type" id="type" formControlName="type"class="form-control">
+                    <select name="type" id="type" formControlName="type" class="form-control">
                         <option *ngFor="let option of typeOptions" [value]="option.value">{{ option.text }}</option>
                     </select>
 
@@ -68,7 +69,7 @@
 
                 <!--Amount-->
                 <div class="form-group col-md-2">
-                    <label for="date">Valor</label>
+                    <label for="date">Data</label>
                     <p-calendar
                         id="date"
                         formControlName="date"
@@ -109,7 +110,7 @@
 
                 <!--CategoryoId-->
                 <div class="form-group col-md-3">
-                    <label for="type">Categoria</label>
+                    <label for="categoryId">Categoria</label>
                     <select name="categoryId" id="categoryId" formControlName="categoryId"class="form-control">
                         <option *ngFor="let category of categories" [value]="category.id">{{ category.name }}</option>
                     </select>

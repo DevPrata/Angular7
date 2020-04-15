@@ -77,12 +77,12 @@ export class EntryFormComponent implements OnInit,AfterContentChecked {
       this.updateEntry()
   }
 
-  get typeOptions(): Array<any> {
+  get typeOptions(): Array<any>{
     return Object.entries(Entry.types).map(
-      ([value,text]) =>{
+      ([value, text]) => {
         return {
           text: text,
-          value:value
+          value: value
         }
       }
     )
@@ -104,7 +104,7 @@ export class EntryFormComponent implements OnInit,AfterContentChecked {
       id:[null],
       name:[null, [Validators.required, Validators.minLength(2)]],
       description:[null],
-      type:['expense',[Validators.required]],
+      type: ["expense", [Validators.required]],
       amount:[null,[Validators.required]],
       date:[null,[Validators.required]],
       paid:[true,[Validators.required]],
