@@ -1,0 +1,122 @@
+<div>
+    <!-- Header -->
+    <div class="row linha-cabecalho no-gutters">
+        <div class="col-sm-2">
+            <small class="fonte-secundaria texto" *ngIf="itensPorPagina">
+                Exibir
+                <select name="itensPorPagina" id="itensPorPagina" class="select-itens">
+                    <option 
+                        *ngFor="let item of itensPorPagina"
+                        [value]="item"
+                    >
+                        {{item}}
+                    </option>
+                </select> 
+                resultados
+            </small>
+        </div>
+    </div>
+
+    <!-- Content -->
+    <div class="row no-gutters">
+        <div class="col-sm-12">
+            <div class="container-tabela fonte-secundaria texto">
+                <table> 
+                    <thead (mouseover)="hoverRow(-1)" (mouseleave)="downRow">
+                        <tr>
+                            <th 
+                                *ngFor="let coluna of cabecalho; let i = index"
+                            >
+                                <div (click)="ordenaTabela(i)">
+                                    <div class="cabecalho-texto">
+                                        {{coluna.texto}}
+                                    </div>
+                                    <div *ngIf="coluna.icone && utilizarOrdenacao" class="cabecalho-icone">
+                                        <i-feather name="maximize-2" ></i-feather>
+                                    </div>
+                                </div>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr
+                            *ngFor="let row of rows; let i = index"
+                            (mouseover)="hoverRow(i)"
+                            (mouseout)="downRow"
+                            :name="'tabela_' + i"
+                        >
+                            <td *ngFor="let col of rows[i]">
+
+                                <div class="corpo-texto">
+                                    {{col}}
+                                </div>
+
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="sem-registro fonte-secundaria texto" *ngIf="rows.length == 0" >
+                Nenhum registro encontrado.
+            </div>
+        </div>
+    </div>
+
+    <!--Footer-->
+
+    <div class="row linha-rodape no-gutters">
+        <div class="col-md-2 coluna-exibicao">
+            <small class="fonte-secundaria pequeno">
+                Exibindo {{mostrandoLength()}} de {{rowsLength()}} resultados
+            </small>
+        </div>
+        <div class="col-md-10">
+            <div class="row no-gutters justify-content-end">
+                <div class="col-md-4 coluna-paginacao">
+
+                    <div class="linha-paginacao">
+                        <button
+                            class="botao-paginacao"
+                            :disabled="paginaAtual === 1"
+                            (click)="trocaPagina(1)"
+                        >
+                            <i-feather name="chevron-left" class="icone" ></i-feather>
+                        </button>
+                        <button
+                            class="botao-paginacao"
+                            :disabled="paginaAtual === 1"
+                            (click)="trocaPagina(paginaAtual - 1)"
+                        >
+                            <i-feather name="chevron-left" class="icone" ></i-feather>
+                        </button>
+
+                        <div class="botao-paginacao"
+                            *ngFor="let pagina of numeroPaginas()"
+                            (click)="trocaPagina(pagina)"
+                        >
+                            <small class="fonte-secundaria pequeno">{{pagina}}</small>
+                        </div>
+
+                        <button
+                            class="botao-paginacao"
+                            :disabled="paginaAtual === qtPaginas || qtPaginas === 0"
+                            (click)="trocaPagina(paginaAtual + 1)"
+                        >
+                            <i-feather name="chevron-right" class="icone" ></i-feather>
+                        </button>
+                        <button
+                            class="botao-paginacao"
+                            :disabled="paginaAtual === qtPaginas || qtPaginas === 0"
+                            (click)="trocaPagina(qtPaginas)"
+                        >
+                            <i-feather name="chevron-right" class="icone" ></i-feather>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>

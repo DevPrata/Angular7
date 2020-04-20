@@ -12,6 +12,22 @@ import { Entry } from '../shared/entry.model';
 })
 export class EntryListComponent extends BaseResourceListComponent<Entry> {
 
+  cabecalho = [
+    {
+      texto: 'Lançamento',
+    },
+    {
+      texto: 'Categoria',                  
+    },
+    {
+      texto: 'Valor R$', 
+    },              
+    {
+      texto: 'Ações'
+    }
+  ]
+
+
   constructor(protected entryService: EntryService) { 
     super(entryService)
   }

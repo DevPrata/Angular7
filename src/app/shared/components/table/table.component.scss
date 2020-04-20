@@ -1,0 +1,185 @@
+@import '../../Sass/main';
+
+.linha-cabecalho{
+    height: 40px;
+    color: #60656C;
+    
+    & small{
+        display: block;
+        margin: 11px 0 11px 11px;
+        padding-left: 10px;
+        padding-top: 3px;
+        
+        .select-itens{
+            width: 38px;
+            color: #00995D;
+        }
+    }
+
+
+    & .slot-cabecalho{
+        box-sizing: border-box;
+        height: 40px;
+    }
+}
+
+.container-tabela{
+    margin: 0 10px; 
+    box-sizing: border-box;
+    width: calc(100% - 20px);
+    color: #60656C;
+
+    & table{
+        width: 100%;
+
+        th{
+            box-sizing: border-box;
+            height: 40px;
+            padding-top: 10px;
+            padding-left: 10px;
+            border-bottom: 2px solid #EBEBEB;
+            text-align: left;
+
+            & .cabecalho-texto{
+                font-display: block;
+                float: left;
+                box-sizing: border-box;
+            }
+
+            & .cabecalho-icone{
+                font-display: block;
+                float: left;
+                box-sizing: border-box;
+
+                .icone{
+                    padding: 0 5px;
+                    cursor: pointer;
+                    transform: rotate(135deg);
+                }
+            }
+        }
+
+        td{
+            box-sizing: border-box;
+            height: 40px;
+            padding-top: 10px;
+            padding-left: 10px;
+            border-bottom: 1px solid #EBEBEB;
+            text-align: left;
+            color: #60656C;
+
+            .corpo-status{
+                margin-left:25px;
+                width: 12px;
+                height: 12px;
+                border-radius: 50%;
+                background-color: #CCCCCC;
+                
+                &.verdadeiro{
+                    background-color: #00995D; 
+                }
+
+                &.falso{
+                    background-color: #ED1651;
+                }
+            }
+
+            .icone-acao{
+                display: block;
+                box-sizing: border-box;
+                width: 26px;
+                height: 26px;
+                border: 2px solid #DEE2E6;
+                border-radius: 20px;
+                color: #DEE2E6;
+                padding: 3px 4px;
+                cursor: pointer;
+
+                &:hover, &:active{
+                    border-color: #00995D;
+                    color: #00995D;
+                } 
+            }
+        }
+    }
+}
+
+.sem-registro{
+    margin: 20px 0;
+    color: #60656C;
+    text-align: center;
+}
+
+.linha-rodape{
+    height: 40px;
+    color: #60656C;
+    margin-top: 10px;
+
+    & .coluna-exibicao{
+        height: 40px;
+
+        & small{
+            display: block;
+            margin-top: 10px;
+            padding-left: 20px;
+        }
+    }
+
+    & .coluna-paginacao{
+        height: 40px;
+        padding-right: 11px;
+
+        .linha-paginacao{
+            display: block;
+            float: right;
+
+            .botao-paginacao{
+                display: block;
+                float: left;
+                box-sizing: border-box;
+                width: 30px;
+                height: 30px;
+                margin: 2.5px;
+                border: 1px solid #BEBEBE;
+                border-radius: 8px;
+                padding-top: 2px;
+                padding-right: 2px;
+                background-color: #FFFFFF;
+                color: #BEBEBE;
+                cursor: pointer;
+                text-align: center;
+    
+                & small{
+                    display: inline-block;
+                    margin-top: 4px;
+                    margin-left: 1px;
+                }
+
+    
+                &:disabled{
+                    border: 1px solid #DEE2E6;
+                    color: #DEE2E6;
+                    cursor: not-allowed;
+                }
+    
+                &.ativo{
+                    color: #FFF;
+                    background-color: #00995D;
+                    border: 1px solid #00995D;
+                }
+
+                &.icone{
+                    height: 15px;
+                    width: 15px;
+                }
+    
+            }
+        }
+    }
+}
+
+@media(max-width: 800px){
+    .container-tabela {
+        overflow: scroll;
+    }
+}
