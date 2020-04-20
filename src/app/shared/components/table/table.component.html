@@ -37,7 +37,7 @@
                                         {{coluna.texto}}
                                     </div>
                                     <div *ngIf="coluna.icone && utilizarOrdenacao" class="cabecalho-icone">
-                                        <i-feather name="maximize-2" class="icone-padrao" ></i-feather>
+                                        <i-feather name="maximize-2" class="icone" ></i-feather>
                                     </div>
                                 </div>
                             </th>
@@ -99,6 +99,7 @@
                         <div class="botao-paginacao"
                             *ngFor="let pagina of numeroPaginas()"
                             (click)="trocaPagina(pagina)"
+                            [class.ativo]="pagina === paginaAtual"
                         >
                             <small class="fonte-secundaria pequeno">{{pagina}}</small>
                         </div>

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { BaseResourceListComponent } from "../../../shared/components/base-resource-list/base-resource-list.component";
+import { BaseResourceTabelaComponent } from "../../../shared/components/base-resource-tabela/base-resource-tabela.component";
 
 import { EntryService } from '../shared/entry.service'
 import { Entry } from '../shared/entry.model';
@@ -10,48 +10,36 @@ import { Entry } from '../shared/entry.model';
   templateUrl: './entry-list.component.html',
   styleUrls: ['./entry-list.component.scss']
 })
-export class EntryListComponent extends BaseResourceListComponent<Entry> {
+export class EntryListComponent extends BaseResourceTabelaComponent<Entry> {
 
   cabecalho = [
     {
       texto: 'Lançamento',
+      icone:'maximize-2'
     },
     {
       texto: 'Categoria',
+      icone:'maximize-2'
     },
     {
-      texto: 'Valor R$',
+      texto: 'Status',
     },
     {
       texto: 'Ações'
     }
   ]
 
-  pagina = 1
-  qtPaginas = 1
-  qtResultados = 0
-
-  rows = []
-  lista:Entry[] = []
-
-  ngOnInit(): void {
-    this.entryService.getAll().subscribe(
-      resources => this.montarTabela(resources),
-      error => alert('Erro ao carregar a lista'),
-    )
-  }
-
-
   constructor(protected entryService: EntryService) {
     super(entryService)
   }
 
-  montarTabela(objeto) {
-    this.lista = []
+
+  protected montarTabela(objeto) {
+    this.resources = []
     this.rows = []
 
-    this.lista = objeto
-    this.lista.forEach(item => {
+    this.resources = objeto
+    this.resources.forEach(item => {
       this.rows.push(
         {
           nome: item.name,
@@ -64,5 +52,6 @@ export class EntryListComponent extends BaseResourceListComponent<Entry> {
     this.qtPaginas = 5
     this.qtResultados = 15
   }
+
 
 }

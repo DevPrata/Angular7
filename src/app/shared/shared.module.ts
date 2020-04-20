@@ -11,11 +11,12 @@ import { FormFieldErrorComponent } from './components/form-field-error/form-fiel
 
  
 import { FeatherModule } from 'angular-feather';
-import { ChevronRight,ChevronLeft,Maximize2 } from 'angular-feather/icons';
+import { ChevronRight,ChevronLeft,Maximize2,Repeat } from 'angular-feather/icons';
 const icons = {
   ChevronRight,
   ChevronLeft,
-  Maximize2
+  Maximize2,
+  Repeat
 };
 
 @NgModule({

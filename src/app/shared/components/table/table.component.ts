@@ -10,7 +10,7 @@ export class TableComponent implements OnInit {
 
   @Input() itensPorPagina: Array<String> = ['05','10'];
   @Input() qtResultados: number = 0;
-  @Input() pagina: number = 0;
+  @Input('pagina') paginaAtual: number = 0;
   @Input() qtPaginas: number = 0;
   @Input() utilizarOrdenacao: boolean = false;
   @Input() ordem: string = 'asc';
@@ -27,7 +27,6 @@ export class TableComponent implements OnInit {
   trocarElementoEvent: EventEmitter<String> = new EventEmitter<String>();
 
   itemSelecionado = '5'
-  paginaAtual = this.pagina
   selectAll = false
   selected = []
   mostrarBotao = false
