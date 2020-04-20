@@ -29,25 +29,6 @@ export abstract class BaseResourceTabelaComponent <T extends BaseResourceModel> 
     )
   }
 
-  protected montarTabela(objeto) {
-    this.resources = []
-    this.rows = []
-
-    this.resources = objeto
-    this.resources.forEach(item => {
-      this.rows.push(
-        {
-          nome: item,
-          amount: item,
-          papeis: item,
-        }
-      )
-    })
-    this.pagina = 1
-    this.qtPaginas = 1
-    this.qtResultados = 1
-  }
-
   trocaElementoPagina(item){
     this.pagina = 1
     this.itensPorPagina = item
@@ -66,5 +47,7 @@ export abstract class BaseResourceTabelaComponent <T extends BaseResourceModel> 
     this.ordem = item.ordem
     this.paginar()
   }
+
+  protected abstract montarTabela (objeto): void;
 
 }
