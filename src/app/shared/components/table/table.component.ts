@@ -15,7 +15,7 @@ export class TableComponent implements OnInit {
   @Input() utilizarOrdenacao: boolean = false;
   @Input() ordem: string = 'asc';
   @Input() cabecalho: Array<[]> = [];
-  @Input() rows: Array<[]> = [];
+  @Input() rows: Array<Object> = [];
 
   @Output()
   ordena: EventEmitter<Object> = new EventEmitter<Object>();
@@ -94,7 +94,7 @@ export class TableComponent implements OnInit {
     this.mostrarBotao = true
     this.hoverIndex = index
   }
-
+  
   downRow() {
     this.hoverIndex = -100
     this.mostrarBotao = false
