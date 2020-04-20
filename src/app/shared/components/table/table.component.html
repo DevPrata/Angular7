@@ -4,7 +4,12 @@
         <div class="col-sm-2">
             <small class="fonte-secundaria texto" *ngIf="itensPorPagina">
                 Exibir
-                <select name="itensPorPagina" id="itensPorPagina" class="select-itens">
+                <select 
+                    (change)="selecionarItem($event.target.value)"
+                    name="itensPorPagina" 
+                    id="itensPorPagina" 
+                    class="select-itens"
+                >
                     <option 
                         *ngFor="let item of itensPorPagina"
                         [value]="item"
@@ -32,7 +37,7 @@
                                         {{coluna.texto}}
                                     </div>
                                     <div *ngIf="coluna.icone && utilizarOrdenacao" class="cabecalho-icone">
-                                        <i-feather name="maximize-2" ></i-feather>
+                                        <i-feather name="maximize-2" class="icone-padrao" ></i-feather>
                                     </div>
                                 </div>
                             </th>
@@ -81,14 +86,14 @@
                             :disabled="paginaAtual === 1"
                             (click)="trocaPagina(1)"
                         >
-                            <i-feather name="chevron-left" class="icone" ></i-feather>
+                            <i-feather name="chevron-left" class="icone icone-padrao" ></i-feather>
                         </button>
                         <button
                             class="botao-paginacao"
                             :disabled="paginaAtual === 1"
                             (click)="trocaPagina(paginaAtual - 1)"
                         >
-                            <i-feather name="chevron-left" class="icone" ></i-feather>
+                            <i-feather name="chevron-left" class="icone icone-padrao" ></i-feather>
                         </button>
 
                         <div class="botao-paginacao"
@@ -103,14 +108,14 @@
                             :disabled="paginaAtual === qtPaginas || qtPaginas === 0"
                             (click)="trocaPagina(paginaAtual + 1)"
                         >
-                            <i-feather name="chevron-right" class="icone" ></i-feather>
+                            <i-feather name="chevron-right" class="icone icone-padrao" ></i-feather>
                         </button>
                         <button
                             class="botao-paginacao"
                             :disabled="paginaAtual === qtPaginas || qtPaginas === 0"
                             (click)="trocaPagina(qtPaginas)"
                         >
-                            <i-feather name="chevron-right" class="icone" ></i-feather>
+                            <i-feather name="chevron-right" class="icone icone-padrao" ></i-feather>
                         </button>
                     </div>
                 </div>
