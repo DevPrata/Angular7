@@ -1,12 +1,13 @@
 import { NgModule } from '@angular/core';
  
 import { FeatherModule } from 'angular-feather';
-import { ChevronRight,ChevronLeft } from 'angular-feather/icons';
- 
-// Select some icons (use an object, not an array)
+import { ChevronRight,ChevronLeft,Maximize2,Repeat } from 'angular-feather/icons';
+
 const icons = {
   ChevronRight,
-  ChevronLeft
+  ChevronLeft,
+  Maximize2,
+  Repeat
 };
  
 @NgModule({
