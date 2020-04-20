@@ -71,11 +71,20 @@
         td{
             box-sizing: border-box;
             height: 40px;
-            padding-top: 10px;
+            padding-top:10px;
             padding-left: 10px;
             border-bottom: 1px solid #EBEBEB;
             text-align: left;
             color: #60656C;
+
+            & .coluna-texto{
+                padding-top:10px;
+            }
+
+            & .coluna-icone-acao{
+                padding-top:0px;
+                vertical-align: middle;
+            }
 
             .corpo-status{
                 margin-left:25px;
@@ -94,15 +103,22 @@
             }
 
             .icone-acao{
-                display: block;
+                display: inline-block;
+                margin-left:6px;
                 box-sizing: border-box;
                 width: 26px;
                 height: 26px;
                 border: 2px solid #DEE2E6;
                 border-radius: 20px;
                 color: #DEE2E6;
-                padding: 3px 4px;
+                padding: 2px 4px;
                 cursor: pointer;
+
+                & .icone{
+                    vertical-align: top;
+                    height: 15px;
+                    width: 15px;
+                }
 
                 &:hover, &:active{
                     border-color: #00995D;

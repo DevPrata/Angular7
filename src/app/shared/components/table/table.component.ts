@@ -16,6 +16,7 @@ export class TableComponent implements OnInit {
   @Input() ordem: string = 'asc';
   @Input() cabecalho: Array<[]> = [];
   @Input() rows: Array<[]> = [];
+  @Input() icones: Array<[]> = []
 
   @Output()
   ordena: EventEmitter<Object> = new EventEmitter<Object>();
@@ -25,6 +26,9 @@ export class TableComponent implements OnInit {
 
   @Output('troca-elemento-pagina')
   trocarElementoEvent: EventEmitter<String> = new EventEmitter<String>();
+
+  @Output('acao-icone')
+  acaoIconeEvent: EventEmitter<Object> = new EventEmitter<Object>();
 
   itemSelecionado = '5'
   selectAll = false
@@ -87,6 +91,10 @@ export class TableComponent implements OnInit {
     this.selected = []
     this.paginaAtual = 1
     this.trocarElementoEvent.emit(this.itemSelecionado)
+  }
+
+  acaoIcone(index,iconeIndex){
+    this.acaoIconeEvent.emit({index: index, acao: iconeIndex})
   }
 
   hoverRow(index) {

@@ -6,10 +6,16 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, throwError  } from 'rxjs'
 import { map, catchError } from 'rxjs/operators'
 
+interface Argumento {
+    resource:string,
+    params?:Object
+}
 
 export abstract class BaseResourceService<T extends BaseResourceModel>{
 
     protected http: HttpClient;
+    protected argumentos:Argumento;
+    protected url:string;
 
     constructor(
         protected apiPath:string, 
@@ -62,6 +68,56 @@ export abstract class BaseResourceService<T extends BaseResourceModel>{
     }
 
     // PROTECTED METHODS
+
+    protected CriarUrl(args) {
+        this.argumentos = args;
+
+        return this.ConfigurarUrl().ConfigurarOptions();
+    }
+
+    protected ConfigurarUrl() {
+        this.url = `https://localhost:8080`;
+        
+        if(this.url.charAt(this.url.length - 1) !== '/'){
+            this.url += "/";
+        }
+
+        if(this.argumentos.resource.charAt(0) === '/'){
+            this.argumentos.resource = this.argumentos.resource.substring(1);
+        }
+
+        this.url += this.argumentos.resource;
+
+        return this;
+    }
+
+    protected ConfigurarOptions(){
+        var params = "";
+
+        for (const key in this.argumentos.params) {
+            if (key in this.argumentos.params){
+                const item = this.argumentos.params[key];
+                if(item !== undefined){
+                    params += '&'+ key +'=' + item;
+                }
+                
+            }
+        }
+
+        if(params != ""){
+            if(params.charAt(0) === '&'){
+                params = params.substring(1);
+            }
+
+            if (this.url.indexOf('?') === -1) {
+                this.url += '?';
+            }
+
+            this.url += params;
+        }
+
+        return this.url;
+    }
 
     protected jsonDataToResources(jsonData: any[]): T[]{
         const resources: T[] = []

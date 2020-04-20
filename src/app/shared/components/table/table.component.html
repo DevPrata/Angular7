@@ -50,12 +50,18 @@
                             (mouseout)="downRow"
                             :name="'tabela_' + i"
                         >
-                            <td *ngFor="let col of rows[i] | keyvalue">
+                            <td class="coluna-texto" *ngFor="let col of rows[i] | keyvalue">
 
                                 <div class="corpo-texto">
                                     {{col.value}}
                                 </div>
 
+                            </td>
+
+                            <td *ngIf="icones.length > 0" style="padding-top:0px; vertical-align: middle;">
+                                <div class="icone-acao" *ngFor="let icone of icones; let indexIcone = index" (click)="acaoIcone(i,indexIcone)" >
+                                    <i-feather [name]="icone" class="icone" ></i-feather>
+                                </div>
                             </td>
                         </tr>
                     </tbody>
