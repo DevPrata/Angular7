@@ -36,9 +36,8 @@ export class EntryListComponent extends BaseResourceListComponent<Entry> {
 
   ngOnInit(): void {
     this.entryService.getAll().subscribe(
-      resources => this.lista = resources,
+      resources => this.montarTabela(resources),
       error => alert('Erro ao carregar a lista'),
-      () => this.montarTabela(this.lista)
     )
   }
 

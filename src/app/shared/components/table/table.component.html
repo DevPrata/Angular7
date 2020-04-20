@@ -50,10 +50,10 @@
                             (mouseout)="downRow"
                             :name="'tabela_' + i"
                         >
-                            <td *ngFor="let col of rows[i]">
+                            <td *ngFor="let col of rows[i] | keyvalue">
 
                                 <div class="corpo-texto">
-                                    {{col}}
+                                    {{col.value}}
                                 </div>
 
                             </td>

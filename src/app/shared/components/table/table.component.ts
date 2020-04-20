@@ -15,7 +15,7 @@ export class TableComponent implements OnInit {
   @Input() utilizarOrdenacao: boolean = false;
   @Input() ordem: string = 'asc';
   @Input() cabecalho: Array<[]> = [];
-  @Input() rows: Array<Object> = [];
+  @Input() rows: Array<[]> = [];
 
   @Output()
   ordena: EventEmitter<Object> = new EventEmitter<Object>();
