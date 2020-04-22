@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { HttpClientModule } from '@angular/common/http';
+import { InterceptorModule } from "./auth/interceptor.module";
 
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
@@ -22,6 +23,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     BrowserAnimationsModule,
     RouterModule,
     HttpClientModule,
+    InterceptorModule,
     HttpClientInMemoryWebApiModule.forRoot(InMemoryDatabase) // Remover isso quando tiver backend externo
   ],
   exports:[

@@ -5,6 +5,7 @@ import { BaseResourceTabelaComponent } from "../../../shared/components/base-res
 import { EntryService } from '../shared/entry.service'
 import { Entry } from '../shared/entry.model';
 import { Router, ActivatedRoute } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-entry-list',
@@ -30,7 +31,7 @@ export class EntryListComponent extends BaseResourceTabelaComponent<Entry> {
     }
   ]
 
-  constructor(protected entryService: EntryService, private router: Router,private route: ActivatedRoute) {
+  constructor(protected entryService: EntryService, private router: Router,private route: ActivatedRoute, private _http:HttpClient) {
     super(entryService)
   }
 
