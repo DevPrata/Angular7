@@ -29,12 +29,12 @@
             ],
             "styles": [
               "src/styles.scss",
-              "src/app/shared/Sass/fontes.scss",
+              "src/Sass/main.scss",
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "node_modules/toastr/build/toastr.min.css",
               "node_modules/primeicons/primeicons.css",
               "node_modules/primeng/resources/themes/nova-light/theme.css",
-              "node_modules/primeng/resources/primeng.min.css",
+              "node_modules/primeng/resources/primeng.min.css"
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",

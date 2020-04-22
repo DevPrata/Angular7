@@ -4,6 +4,7 @@ import { BaseResourceTabelaComponent } from "../../../shared/components/base-res
 
 import { EntryService } from '../shared/entry.service'
 import { Entry } from '../shared/entry.model';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-entry-list',
@@ -29,7 +30,7 @@ export class EntryListComponent extends BaseResourceTabelaComponent<Entry> {
     }
   ]
 
-  constructor(protected entryService: EntryService) {
+  constructor(protected entryService: EntryService, private router: Router,private route: ActivatedRoute) {
     super(entryService)
   }
 
@@ -51,6 +52,25 @@ export class EntryListComponent extends BaseResourceTabelaComponent<Entry> {
     this.pagina = 1
     this.qtPaginas = 5
     this.qtResultados = 15
+  }
+
+  acao(item){
+    if(item.acao === 0){
+      this.router.navigate([`${this.resources[item.index].id}/edit`], { relativeTo: this.route.parent });
+    }else{
+      this.deleteResource(this.resources[item.index].id)
+    }
+  }
+
+  deleteResource(resource){
+    const podeDeletar = confirm('Deseja realmente excluir este item? ')
+
+    if(podeDeletar){
+      this.entryService.delete(resource.id).subscribe(
+        () => this.resources = this.resources.filter( element => element !== resource),
+        () => alert('Erro ao tentar excluir')
+      )
+    }
   }
 
 

@@ -1,4 +1,4 @@
-@import '../../Sass/main';
+@import '../../../../Sass/main';
 
 .linha-cabecalho{
     height: 40px;
@@ -104,14 +104,15 @@
 
             .icone-acao{
                 display: inline-block;
-                margin-left:6px;
+                margin-left:4px;
                 box-sizing: border-box;
                 width: 26px;
                 height: 26px;
                 border: 2px solid #DEE2E6;
                 border-radius: 20px;
                 color: #DEE2E6;
-                padding: 2px 4px;
+                padding: 2px 0px;
+                text-align: center;
                 cursor: pointer;
 
                 & .icone{
