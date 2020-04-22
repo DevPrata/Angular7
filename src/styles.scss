@@ -44,6 +44,7 @@ $mat-red: (
     A700: white,
   )
 );
+
 $projeto-angular7-primary: mat-palette($mat-red);
 $projeto-angular7-accent: mat-palette($mat-red, A200, A100, A400);
 
@@ -59,12 +60,59 @@ $custom-typography: mat-typography-config(
   $body-1: mat-typography-level(16px, 24px, 500),
 );
 
+
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
+
+
 @include mat-button-typography($custom-typography);
 @include mat-base-typography($custom-typography);
 @include angular-material-theme($projeto-angular7-theme);
+
+.mat-form-field{
+    font-family: 'Raleway';
+    color:#747474;
+    height: 48px;
+}
+
+$form-field: (
+  50: #000000,
+  100: #000000,
+  200: #000000,
+  300: #000000,
+  400: #000000,
+  500: #000000,
+  600: #000000,
+  700: #000000,
+  800: #000000,
+  900: #000000,
+  A100: #000000,
+  A200: #000000,
+  A400: #000000,
+  A700: #000000,
+  contrast: (
+    50: $black-87-opacity,
+    100: $black-87-opacity,
+    200: $black-87-opacity,
+    300: $black-87-opacity,
+    400: $black-87-opacity,
+    500: white,
+    600: white,
+    700: white,
+    800: $white-87-opacity,
+    900: $white-87-opacity,
+    A100: $black-87-opacity,
+    A200: white,
+    A400: white,
+    A700: white,
+  )
+);
+$candy-app-primary: mat-palette($form-field);
+$candy-app-accent:  mat-palette($mat-pink, A200, A100, A400);
+$candy-app-theme:   mat-light-theme($candy-app-primary, $candy-app-accent);
+@include mat-form-field-theme($candy-app-theme);
+@include mat-input-theme($candy-app-theme);
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }

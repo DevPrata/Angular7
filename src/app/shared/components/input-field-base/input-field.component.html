@@ -1,0 +1,14 @@
+<div style="font-size: 12px;">
+    <mat-form-field appearance="outline">
+        <mat-label>{{titulo}}</mat-label>
+        <input 
+            matInput 
+            [type]="type" 
+            [placeholder]="placeholder" 
+            [value]="innerValue" 
+            (input)="inputHandler($event)" 
+            (blur)="setTouched()"
+            [imask]="imaskConfig"
+        >
+    </mat-form-field>
+</div>
