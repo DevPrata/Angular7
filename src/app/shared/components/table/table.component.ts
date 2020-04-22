@@ -1,6 +1,12 @@
 // ng g c shared/components/bread-crumb
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
+interface Cabecalho {
+  texto:string,
+  icone?:string,
+  campoOrdenacao?:string
+}
+
 @Component({
   selector: 'app-table',
   templateUrl: './table.component.html',
@@ -14,7 +20,7 @@ export class TableComponent implements OnInit {
   @Input() qtPaginas: number = 0;
   @Input() utilizarOrdenacao: boolean = false;
   @Input() ordem: string = 'asc';
-  @Input() cabecalho: Array<[]> = [];
+  @Input() cabecalho: Array<Cabecalho> = [];
   @Input() rows: Array<[]> = [];
   @Input() icones: Array<[]> = []
 
@@ -74,7 +80,7 @@ export class TableComponent implements OnInit {
   ordenaTabela(index) {
     if (this.cabecalho[index].hasOwnProperty('icone') && this.utilizarOrdenacao) {
       let ordenacao = this.ordem === 'asc' ? 'desc' : 'asc'
-      this.ordena.emit({ index: index, ordem: ordenacao })
+      this.ordena.emit({ index: index, ordem: ordenacao, campoOrdenacao:this.campoOrdenacaoDoCabecalho(index) })
     }
   }
 
@@ -82,6 +88,14 @@ export class TableComponent implements OnInit {
     if (this.paginaAtual !== pagina) {
       this.paginaAtual = pagina
       this.trocaPaginaEvent.emit({ pagina: this.paginaAtual, itensPorPagina: this.itemSelecionado })
+    }
+  }
+
+  campoOrdenacaoDoCabecalho(index){
+    if(this.cabecalho[index].hasOwnProperty('campoOrdenacao')){
+        return this.cabecalho[index].campoOrdenacao
+    }else{
+        return null
     }
   }
 
@@ -94,7 +108,7 @@ export class TableComponent implements OnInit {
   }
 
   acaoIcone(index,iconeIndex){
-    this.acaoIconeEvent.emit({index: index, acao: iconeIndex})
+    this.acaoIconeEvent.emit( { index: index, acao: iconeIndex } )
   }
 
   hoverRow(index) {

@@ -48,6 +48,17 @@ export abstract class BaseResourceTabelaComponent <T extends BaseResourceModel> 
     this.paginar()
   }
 
+  protected getArgumento (argumentoAdicional = {}) {
+    const argumentoPadraoTabela =  {
+        direcaoOrdenacao: this.ordem,
+        ordenacao: this.campoOrdenado,
+        pagina: this.pagina,
+        tamanhoPagina: this.itensPorPagina,
+    }
+
+    return {...argumentoPadraoTabela,...argumentoAdicional}
+  }
+
   protected abstract montarTabela (objeto): void;
 
 }

@@ -25,15 +25,16 @@ export abstract class BaseResourceService<T extends BaseResourceModel>{
         this.http = injector.get(HttpClient);
     }
     
-    getAll(): Observable<T[]> {
-        return this.http.get(this.apiPath).pipe(
-          map(this.jsonDataToResources.bind(this)),
-          catchError(this.handleError),
-        )
+    getAll(argumento = {}): Observable<T[]> {
+        return this.http.get(this.CriarUrl( { resource:this.apiPath, params: argumento } ))
+            .pipe(
+                map(this.jsonDataToResources.bind(this)),
+                catchError(this.handleError),
+            )
     }
     
     getById(id:number): Observable<T> {
-        const url = `${this.apiPath}/${id}`
+        const url = this.CriarUrl( { resource:`${this.apiPath}/${id}` } )
 
         return this.http.get(url).pipe(
             map(this.jsonDataToResource.bind(this)),
@@ -42,15 +43,15 @@ export abstract class BaseResourceService<T extends BaseResourceModel>{
     }
     
     create(resource:T): Observable<T> {
-        return this.http.post(this.apiPath,resource).pipe(
+        return this.http.post(this.CriarUrl( { resource:this.apiPath } ),resource).pipe(
             map(this.jsonDataToResource.bind(this)),
             catchError(this.handleError),
         )
     }
     
     update(resource:T): Observable<T> {
-        const url = `${this.apiPath}/${resource.id}`
-
+        const url = this.CriarUrl( { resource:`${this.apiPath}/${resource.id}` } )
+        
         return this.http.put(url,resource).pipe(
             map(() => resource),
             catchError(this.handleError),
@@ -59,7 +60,7 @@ export abstract class BaseResourceService<T extends BaseResourceModel>{
     }
 
     delete(id:number): Observable<any> {
-        const url = `${this.apiPath}/${id}`
+        const url = this.CriarUrl( { resource:`${this.apiPath}/${id}` } )
 
         return this.http.delete(url).pipe(
             map(() => null),
@@ -76,7 +77,7 @@ export abstract class BaseResourceService<T extends BaseResourceModel>{
     }
 
     protected ConfigurarUrl() {
-        this.url = `https://localhost:8080`;
+        this.url = ``;
         
         if(this.url.charAt(this.url.length - 1) !== '/'){
             this.url += "/";
