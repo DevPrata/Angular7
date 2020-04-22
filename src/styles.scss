@@ -12,6 +12,38 @@
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
+$mat-red: (
+  50: #ffebee,
+  100: #ffcdd2,
+  200: #ef9a9a,
+  300: #e57373,
+  400: #ef5350,
+  500: #E41728,
+  600: #e53935,
+  700: #d32f2f,
+  800: #c62828,
+  900: #b71c1c,
+  A100: #ff8a80,
+  A200: #ff5252,
+  A400: #ff1744,
+  A700: #d50000,
+  contrast: (
+    50: $black-87-opacity,
+    100: $black-87-opacity,
+    200: $black-87-opacity,
+    300: $black-87-opacity,
+    400: $black-87-opacity,
+    500: white,
+    600: white,
+    700: white,
+    800: $white-87-opacity,
+    900: $white-87-opacity,
+    A100: $black-87-opacity,
+    A200: white,
+    A400: white,
+    A700: white,
+  )
+);
 $projeto-angular7-primary: mat-palette($mat-red);
 $projeto-angular7-accent: mat-palette($mat-red, A200, A100, A400);
 
@@ -21,12 +53,19 @@ $projeto-angular7-warn: mat-palette($mat-red);
 // Create the theme object (a Sass map containing all of the palettes).
 $projeto-angular7-theme: mat-light-theme($projeto-angular7-primary, $projeto-angular7-accent, $projeto-angular7-warn);
 
+$custom-typography: mat-typography-config(
+  $font-family: 'Raleway,Poppins',
+  $headline: mat-typography-level(32px, 48px, 700),
+  $body-1: mat-typography-level(16px, 24px, 500),
+);
+
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
+@include mat-button-typography($custom-typography);
+@include mat-base-typography($custom-typography);
 @include angular-material-theme($projeto-angular7-theme);
-
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: "Poppins", "Raleway", sans-serif; }
