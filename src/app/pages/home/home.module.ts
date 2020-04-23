@@ -1,16 +1,16 @@
 import { NgModule } from '@angular/core';
 
 import { HomeRoutingModule } from './home-routing.module';
-import { ReportsComponent } from './reports/reports.component';
 
-import { MatButtonModule } from "@angular/material/button";
+import { LoginComponent } from './login/login.component';
+import { SharedModule } from "../../shared/shared.module";
 
 
 @NgModule({
-  declarations: [ReportsComponent],
+  declarations: [LoginComponent],
   imports: [
     HomeRoutingModule,
-    MatButtonModule,
+    SharedModule
   ]
 })
 export class HomeModule { }

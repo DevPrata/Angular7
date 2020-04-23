@@ -15,7 +15,7 @@ import { NG_VALUE_ACCESSOR, ControlValueAccessor, NgModel,NgControl } from '@ang
 export class InputField  implements ControlValueAccessor {
 
 
-    ngControl: NgControl;
+    ngControl?: NgControl;
     private changeCallback: Function;
     private touchedCallback: Function;
 
