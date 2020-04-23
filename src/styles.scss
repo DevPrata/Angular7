@@ -109,11 +109,11 @@ $form-field: (
     A700: white,
   )
 );
-$candy-app-primary: mat-palette($form-field);
-$candy-app-accent:  mat-palette($mat-pink, A200, A100, A400);
-$candy-app-theme:   mat-light-theme($candy-app-primary, $candy-app-accent);
-@include mat-form-field-theme($candy-app-theme);
-@include mat-input-theme($candy-app-theme);
+$form-field-app-primary: mat-palette($form-field);
+$form-field-app-accent:  mat-palette($mat-pink, A200, A100, A400);
+$form-field-app-theme:   mat-light-theme($form-field-app-primary, $form-field-app-accent);
+@include mat-form-field-theme($form-field-app-theme);
+@include mat-input-theme($form-field-app-theme);
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }
