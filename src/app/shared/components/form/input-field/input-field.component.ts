@@ -20,12 +20,14 @@ export class InputField  implements ControlValueAccessor {
     private touchedCallback: Function;
 
     isDisabled = false;
+    hide = true;
     innerValue = '';
 
     @Input() titulo: string = '';
-    @Input() type = 'text';
     @Input() placeholder: string;
     @Input() imaskConfig: object;
+    @Input() type = 'text';
+
 
     @Input() set value(value: string) {
       this.innerValue = value == null ? '' : String(value);
@@ -43,12 +45,15 @@ export class InputField  implements ControlValueAccessor {
     writeValue(value: any) {
       this.value = value;
     }
+
     registerOnChange(fn: Function) {
       this.changeCallback = fn;
     }
+
     registerOnTouched(fn: Function) {
       this.touchedCallback = fn;
     }
+
     setDisabledState(isDisabled: boolean) {
       this.isDisabled = isDisabled;
     }
@@ -63,6 +68,15 @@ export class InputField  implements ControlValueAccessor {
     setTouched() {
       if (this.touchedCallback) {
         this.touchedCallback();
+      }
+    }
+
+    get typeDynamic(){
+      if(this.type !== 'password') return this.type
+      if(!this.hide){
+        return 'text'
+      }else{
+        return 'password'
       }
     }
 

@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { InputField } from "./input-field/input-field.component";
 import { ReactiveFormsModule,FormsModule } from '@angular/forms';
 
@@ -12,6 +13,7 @@ import { MatButtonModule } from "@angular/material/button";
   declarations: [ InputField ],
 
   imports: [
+    CommonModule,
     ReactiveFormsModule,
     MatFormFieldModule,
     MatInputModule,
@@ -21,6 +23,7 @@ import { MatButtonModule } from "@angular/material/button";
 
   exports:[
     // Modulos compartilhados
+    CommonModule,
     ReactiveFormsModule,
     MatButtonModule,
     FormsModule,
