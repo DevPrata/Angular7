@@ -12,6 +12,10 @@
 }
 
 
+h1{
+    color:#E41728;
+    text-align: center;
+}
 
 @media screen and (max-height: 450px) {
     .sidenav {padding-top: 15px;}
@@ -30,6 +34,7 @@
 @media screen and (min-width: 768px){
     .main{
         margin-left: 70%; 
+        overflow-y: auto;
     }
 
     .sidenav{
@@ -41,7 +46,7 @@
     }
 
     .login-form{
-        margin-top: 50%;
+        margin-top: 60%;
     }
 
     .register-form{
@@ -51,7 +56,6 @@
 
 
 .login-main-text{
-    margin-top: 20%;
     padding: 60px;
     color: #fff;
 }
