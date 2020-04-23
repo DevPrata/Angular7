@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 import { SharedModule } from "../../shared/shared.module";
 
@@ -10,6 +11,7 @@ import { CategoryFormComponent } from './category-form/category-form.component';
 @NgModule({
   declarations: [CategoryListComponent, CategoryFormComponent],
   imports: [
+    CommonModule,
     SharedModule,
     CategoriesRoutingModule
   ]
