@@ -16,6 +16,7 @@ import { InputField } from "./components/input-field-base/input-field.component"
 
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatInputModule } from "@angular/material/input";
+import { MatIconModule } from "@angular/material/icon";
 
 
 @NgModule({
@@ -24,7 +25,7 @@ import { MatInputModule } from "@angular/material/input";
     PageHeaderComponent,
     FormFieldErrorComponent,
     TableComponent,
-    InputField
+    InputField,
   ],
   imports: [
     CommonModule,
@@ -33,6 +34,7 @@ import { MatInputModule } from "@angular/material/input";
     IconsModule,
     MatFormFieldModule,
     MatInputModule,
+    MatIconModule,
     IMaskModule
   ],
   exports: [

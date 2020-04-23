@@ -8,7 +8,11 @@
             [value]="innerValue" 
             (input)="inputHandler($event)" 
             (blur)="setTouched()"
+            [formControl]="ngControl.control"
             [imask]="imaskConfig"
         >
+        <mat-error *ngIf="ngControl.hasError('required')">
+            Campo obrigátório
+        </mat-error>
     </mat-form-field>
 </div>

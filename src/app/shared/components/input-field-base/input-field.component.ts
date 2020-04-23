@@ -1,5 +1,5 @@
-import { Component,Input, ViewEncapsulation,forwardRef } from '@angular/core';
-import { NG_VALUE_ACCESSOR, ControlValueAccessor, NgModel } from '@angular/forms';
+import { Component,Input, ViewEncapsulation,forwardRef, Injector } from '@angular/core';
+import { NG_VALUE_ACCESSOR, ControlValueAccessor, NgModel,NgControl } from '@angular/forms';
 
 @Component({
   selector: 'app-input-field',
@@ -14,6 +14,14 @@ import { NG_VALUE_ACCESSOR, ControlValueAccessor, NgModel } from '@angular/forms
 })
 export class InputField  implements ControlValueAccessor {
 
+
+    ngControl: NgControl;
+    private changeCallback: Function;
+    private touchedCallback: Function;
+
+    isDisabled = false;
+    innerValue = '';
+
     @Input() titulo: string = '';
     @Input() type = 'text';
     @Input() placeholder: string;
@@ -24,6 +32,12 @@ export class InputField  implements ControlValueAccessor {
     }
     get value() {
       return this.innerValue;
+    }
+
+    constructor(private inj: Injector) {}
+
+    ngOnInit() {
+      this.ngControl = this.inj.get(NgControl)
     }
   
     writeValue(value: any) {
@@ -38,12 +52,6 @@ export class InputField  implements ControlValueAccessor {
     setDisabledState(isDisabled: boolean) {
       this.isDisabled = isDisabled;
     }
-
-    private changeCallback: Function;
-    private touchedCallback: Function;
-
-    isDisabled = false;
-    innerValue = '';
   
     inputHandler(event: Event) {
       this.value = (<HTMLInputElement>event.target).value;
