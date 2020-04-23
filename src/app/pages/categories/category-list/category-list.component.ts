@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { BaseResourceListComponent } from "../../../shared/components/base-resource-list/base-resource-list.component";
+import { BaseResourceListComponent } from "../../../shared/abstract/base-resource-list/base-resource-list.component";
 
 import { CategoryService } from '../shared/category.service'
 import { Category } from '../shared/category.model';

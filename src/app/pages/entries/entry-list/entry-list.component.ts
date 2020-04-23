@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { BaseResourceTabelaComponent } from "../../../shared/components/base-resource-tabela/base-resource-tabela.component";
+import { BaseResourceTabelaComponent } from "../../../shared/abstract/base-resource-tabela/base-resource-tabela.component";
 
 import { EntryService } from '../shared/entry.service'
 import { Entry } from '../shared/entry.model';
