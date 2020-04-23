@@ -11,9 +11,9 @@
             [formControl]="ngControl.control"
             [imask]="imaskConfig"
         >
-        <mat-icon matSuffix color="primary" *ngIf="ngControl.hasError('required') && ngControl.touched">error</mat-icon>
-        <mat-error *ngIf="ngControl.hasError('required')">
-            Campo obrigátório
+        <mat-icon matSuffix color="primary" *ngIf="mustShowErrorMessage()">error</mat-icon>
+        <mat-error *ngIf="mustShowErrorMessage()">
+            {{errorMessage}}
         </mat-error>
     </mat-form-field>
 </div>

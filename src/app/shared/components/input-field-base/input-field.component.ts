@@ -66,4 +66,34 @@ export class InputField  implements ControlValueAccessor {
       }
     }
 
+
+    public get errorMessage(): string | null {
+      if( this.mustShowErrorMessage() )
+        return this.getErrorMessage();
+      else
+        return null;
+    }
+  
+    public mustShowErrorMessage(): boolean {
+      return this.ngControl.invalid && this.ngControl.touched
+    }
+  
+    private getErrorMessage(): string | null {
+      if( this.ngControl.errors.required )
+        return "dado obrigatório";
+  
+      else if( this.ngControl.errors.email)
+        return "formato de email inválido"
+  
+      else if( this.ngControl.errors.minlength){
+        const requiredLength = this.ngControl.errors.minlength.requiredLength;
+        return `deve ter no mínimo ${requiredLength} caracteres`;
+      }
+  
+      else if( this.ngControl.errors.maxlength){
+        const requiredLength = this.ngControl.errors.maxlength.requiredLength;
+        return `deve ter no máximo ${requiredLength} caracteres`;
+      }
+    }
+
 }
