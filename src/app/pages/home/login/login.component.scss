@@ -1,16 +1,4 @@
 
-.main-head{
-    height: 150px;
-   
-}
-
-.sidenav {
-    height: 100%;
-    background-color: #000;
-    overflow-x: hidden;
-    padding-top: 20px;
-}
-
 
 h1{
     color:#E41728;
@@ -22,36 +10,14 @@ h1{
 p{
     color:#747474;
     font-size: 13px;
+    font-weight: 400;
 }
 
-@media screen and (max-height: 450px) {
-    .sidenav {padding-top: 15px;}
-}
-
-@media screen and (max-width: 450px) {
-    .login-form{
-        margin-top: 10%;
-    }
-
-    .register-form{
-        margin-top: 10%;
-    }
+.login-form{
+    width: 375px;
 }
 
 @media screen and (min-width: 768px){
-    .main{
-        margin-left: 62%; 
-        overflow-y: auto;
-    }
-
-    .sidenav{
-        width: 55%;
-        position: fixed;
-        z-index: 1;
-        top: 0;
-        left: 0;
-    }
-
     .login-form{
         margin-top: 40%;
     }
