@@ -41,11 +41,22 @@
 
         th{
             box-sizing: border-box;
-            height: 40px;
-            padding-top: 10px;
-            padding-left: 10px;
-            border-bottom: 2px solid #EBEBEB;
+            background-color: #F4F4F4;
+            border-bottom: 2px solid #000000;
             text-align: left;
+            padding-left: 10px;
+
+
+            &:hover{
+                background-color: #00000029;
+                .cabecalho-icone{
+                    opacity: 1;
+                }
+            }
+
+            .coluna-cabecalho{
+                height: 56px;
+            }
 
             & .cabecalho-texto{
                 font-display: block;
@@ -54,17 +65,21 @@
             }
 
             & .cabecalho-icone{
-                height: 10px;
-                width: 10px;
-                font-display: block;
-                float: left;
+                opacity: 0;
+                float: right;
                 box-sizing: border-box;
 
                 .icone{
-                    padding: 0 5px;
+                    font-size: 22px;
+                    text-align: right;
                     cursor: pointer;
-                    transform: rotate(135deg);
                 }
+            }
+        }
+
+        tr{
+            &:hover{
+                background-color: #EAEAEA;
             }
         }
 
@@ -76,6 +91,7 @@
             border-bottom: 1px solid #EBEBEB;
             text-align: left;
             color: #60656C;
+
 
             & .coluna-texto{
                 padding-top:10px;

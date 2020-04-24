@@ -32,12 +32,13 @@
                             <th 
                                 *ngFor="let coluna of cabecalho; let i = index"
                             >
-                                <div (click)="ordenaTabela(i)">
+                                <div (click)="ordenaTabela(i)" class="coluna-cabecalho d-flex flex-row align-items-center justify-content-between">
                                     <div class="cabecalho-texto">
                                         {{coluna.texto}}
                                     </div>
-                                    <div *ngIf="coluna.icone && utilizarOrdenacao" class="cabecalho-icone">
-                                        <i-feather name="maximize-2" class="icone" ></i-feather>
+                                    <div *ngIf="coluna.icone && utilizarOrdenacao" class="cabecalho-icone mr-2">
+                                        <mat-icon class="icone"> arrow_downward</mat-icon>
+                                        <!--<i-feather name="maximize-2" class="icone" ></i-feather>-->
                                     </div>
                                 </div>
                             </th>

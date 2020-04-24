@@ -5,7 +5,6 @@ import { ReactiveFormsModule,FormsModule } from '@angular/forms';
 
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatInputModule } from "@angular/material/input";
-import { MatIconModule } from "@angular/material/icon";
 import { IMaskModule } from 'angular-imask'
 import { MatButtonModule } from "@angular/material/button";
 import { MatSlideToggleModule } from "@angular/material/slide-toggle";
@@ -20,7 +19,6 @@ import { MatSlideToggleModule } from "@angular/material/slide-toggle";
     ReactiveFormsModule,
     MatFormFieldModule,
     MatInputModule,
-    MatIconModule,
     IMaskModule
   ],
 
