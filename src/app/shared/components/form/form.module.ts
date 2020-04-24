@@ -8,6 +8,7 @@ import { MatInputModule } from "@angular/material/input";
 import { IMaskModule } from 'angular-imask'
 import { MatButtonModule } from "@angular/material/button";
 import { MatSlideToggleModule } from "@angular/material/slide-toggle";
+import { IconsModule } from "../icons/icons.module";
 
 @NgModule({
   declarations: [ 
@@ -19,7 +20,8 @@ import { MatSlideToggleModule } from "@angular/material/slide-toggle";
     ReactiveFormsModule,
     MatFormFieldModule,
     MatInputModule,
-    IMaskModule
+    IMaskModule,
+    IconsModule
   ],
 
   exports:[
