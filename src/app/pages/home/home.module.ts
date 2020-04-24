@@ -10,7 +10,7 @@ import { SharedModule } from "../../shared/shared.module";
   declarations: [LoginComponent],
   imports: [
     HomeRoutingModule,
-    SharedModule
+    SharedModule,
   ]
 })
 export class HomeModule { }

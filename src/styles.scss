@@ -76,6 +76,22 @@ $custom-typography: mat-typography-config(
     color:#747474;
     height: 48px;
 }
+.mat-slide-toggle{
+  .mat-slide-toggle-content{
+    font-family: 'Poppins';
+    font-size:14px;
+    font-weight: 400;
+  }
+
+  &.mat-primary.mat-checked .mat-slide-toggle-bar{
+    background-color: #FEB8BF;
+  }
+
+  .mat-slide-toggle-bar{
+    background-color: #FEB8BF;
+  }
+}
+
 
 $form-field: (
   50: #000000,

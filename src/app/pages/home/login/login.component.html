@@ -10,13 +10,23 @@
  <div class="main">
     <div class="col-md-12 col-sm-12">
        <div class="login-form">
-          <h1> bem-vindo!</h1>
+          <h1> olá, seja Bem-vindo!</h1>
           <form [formGroup]="resourceForm">
              <div class="form-group">
                <app-input-field titulo="Usuário" formControlName="login"></app-input-field>
              </div>
              <div class="form-group senha-input">
                <app-input-field titulo="Senha" formControlName="senha" type="password"></app-input-field>
+             </div>
+             <div class="form-group lembrar-senha">
+                <div class="row">
+                   <div class="col-md-7">
+                     <mat-slide-toggle color="primary">Lembrar senha</mat-slide-toggle>
+                   </div>
+                   <div class="col-md-5">
+                     <p class="fonte-secundaria">Esqueci minha senha</p>
+                   </div>
+                </div>
              </div>
              <div class="container-button">
                <button mat-raised-button color="primary" class="btn-entrar">entrar</button>

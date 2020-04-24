@@ -8,9 +8,12 @@ import { MatInputModule } from "@angular/material/input";
 import { MatIconModule } from "@angular/material/icon";
 import { IMaskModule } from 'angular-imask'
 import { MatButtonModule } from "@angular/material/button";
+import { MatSlideToggleModule } from "@angular/material/slide-toggle";
 
 @NgModule({
-  declarations: [ InputField ],
+  declarations: [ 
+    InputField,  
+  ],
 
   imports: [
     CommonModule,
@@ -26,10 +29,11 @@ import { MatButtonModule } from "@angular/material/button";
     CommonModule,
     ReactiveFormsModule,
     MatButtonModule,
+    MatSlideToggleModule,
     FormsModule,
-
+    
     // Componentes compartilhados
-    InputField
+    InputField,
   ]
 })
 export class FormModule { }

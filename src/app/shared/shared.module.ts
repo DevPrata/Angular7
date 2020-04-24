@@ -17,7 +17,7 @@ import { NavbarComponent } from "./components/navbar/navbar.component";
     BreadCrumbComponent,
     PageHeaderComponent,
     TableComponent,
-    NavbarComponent
+    NavbarComponent,
   ],
   imports: [
     CommonModule,
