@@ -58,7 +58,7 @@ $projeto-angular7-theme: mat-light-theme($projeto-angular7-primary, $projeto-ang
 $custom-typography: mat-typography-config(
   $font-family: 'Poppins',
   $headline: mat-typography-level(28.83px, 48px, 700),
-  $body-1: mat-typography-level(16px, 24px, 500),
+  $body-1: mat-typography-level(16px, 24px, 400),
 );
 
 
@@ -133,4 +133,4 @@ $form-field-app-theme:   mat-light-theme($form-field-app-primary, $form-field-ap
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }
-body { margin: 0; font-family: "Poppins", "Raleway-Regular", sans-serif; }
+body { margin: 0; font-family: "Poppins", "Raleway-Regular", sans-serif; font-weight: 400; }

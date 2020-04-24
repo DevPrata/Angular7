@@ -1,0 +1,20 @@
+
+<div class="esqueci-form">
+    <h1> esqueci minha senha</h1>
+    <p class="text-center fonte-secundaria texto-explicativo">Para recuperar o seu acesso ao portal, preencha as informações abaixo.</p>
+    <form [formGroup]="resourceForm">
+       <div class="form-group">
+         <app-input-field titulo="Usuário" formControlName="login"></app-input-field>
+       </div>
+       <div class="form-group senha-input">
+         <app-input-field titulo="Nova senha" formControlName="senha" type="password"></app-input-field>
+       </div>
+       <div class="form-group lembrar-senha">
+            <p class="text-center negrito">Força da senha:</p>
+            <p class="text-center">Sua senha deve possuir 8 ou mais caracteres e conter, ao menos, um número, uma letra maiúscula e uma minúscula.</p>
+       </div>
+       <div class="container-button">
+       <button mat-raised-button color="primary" class="btn-entrar">alterar senha</button>
+       </div>
+    </form>
+ </div>
