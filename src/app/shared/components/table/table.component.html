@@ -60,9 +60,21 @@
                             </td>
 
                             <td *ngIf="icones.length > 0" style="padding-top:0px; vertical-align: middle;">
-                                <div class="icone-acao" *ngFor="let icone of icones; let indexIcone = index" (click)="acaoIcone(i,indexIcone)" >
+                                <!--<div class="icone-acao" *ngFor="let icone of icones; let indexIcone = index" (click)="acaoIcone(i,indexIcone)" >
                                     <i-feather [name]="icone" class="icone" ></i-feather>
-                                </div>
+                                </div>-->
+                                <mat-menu #appMenu="matMenu" xPosition="before" class="menu-acao icone-acao" >
+                                    <ng-template matMenuContent>
+                                        <button mat-menu-item>
+                                            <mat-icon style="font-size:22px;">create</mat-icon>
+                                            <span class="texto">Redial</span>
+                                        </button>
+                                    </ng-template>
+                                </mat-menu>
+                                  
+                                <button mat-icon-button [matMenuTriggerFor]="appMenu">
+                                    <mat-icon>more_horiz</mat-icon>
+                                </button>
                             </td>
                         </tr>
                     </tbody>

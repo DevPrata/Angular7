@@ -4,9 +4,9 @@ import { RouterModule } from "@angular/router";
 
 import { IconsModule } from "./components/icons/icons.module";
 import { FormModule } from "./components/form/form.module";
+import { TableModule } from "./components/table/table.module";
 
 import { BreadCrumbComponent } from './components/bread-crumb/bread-crumb.component';
-import { TableComponent } from './components/table/table.component';
 import { PageHeaderComponent } from './components/page-header/page-header.component';
 import { NavbarComponent } from "./components/navbar/navbar.component";
 
@@ -15,7 +15,6 @@ import { NavbarComponent } from "./components/navbar/navbar.component";
   declarations: [
     BreadCrumbComponent,
     PageHeaderComponent,
-    TableComponent,
     NavbarComponent,
   ],
   imports: [
@@ -27,11 +26,11 @@ import { NavbarComponent } from "./components/navbar/navbar.component";
     // Modulos compartilhados
     IconsModule,
     FormModule,
-
+    TableModule,
+    
     // Componentes compartilhados
     BreadCrumbComponent,
     PageHeaderComponent,
-    TableComponent,
     NavbarComponent
   ]
 })
