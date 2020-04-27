@@ -1,7 +1,7 @@
 @import '../../../../Sass/main';
 
 .linha-cabecalho{
-    height: 40px;
+    height: 50px;
     color: #60656C;
     
     & small{
@@ -10,10 +10,6 @@
         padding-left: 10px;
         padding-top: 3px;
         
-        .select-itens{
-            width: 38px;
-            color: #00995D;
-        }
 
         .icone {
             vertical-align: super;
@@ -159,16 +155,22 @@
 .linha-rodape{
     height: 40px;
     color: #60656C;
-    margin-top: 10px;
+    margin-top: 42px;
 
     & .coluna-exibicao{
         height: 40px;
 
         & small{
             display: block;
-            margin-top: 10px;
             padding-left: 20px;
         }
+    }
+
+    .select-itens{
+        width: 80px;
+        margin: 0px 3px;
+        height: 20px;
+        color: #00995D;
     }
 
     & .coluna-paginacao{
@@ -186,11 +188,11 @@
                 width: 30px;
                 height: 30px;
                 margin: 2.5px;
-                border: 1px solid #BEBEBE;
-                border-radius: 8px;
+                border: 1px solid #BCBCBC;
+                border-radius: 3px;
                 padding-right: 2px;
                 background-color: #FFFFFF;
-                color: #BEBEBE;
+                color: #323232;
                 cursor: pointer;
                 text-align: center;
     
@@ -202,15 +204,16 @@
 
     
                 &:disabled{
-                    border: 1px solid #DEE2E6;
-                    color: #DEE2E6;
+                    opacity: 0.2;
+                    border: 1px solid #BCBCBC;
+                    color: black;
                     cursor: not-allowed;
                 }
     
                 &.ativo{
-                    color: #FFF;
-                    background-color: #00995D;
-                    border: 1px solid #00995D;
+                    color: #000000;
+                    border: 2px solid #000000;
+                    border-radius: 3px;
                 }
 
                 &.icone{
@@ -233,4 +236,25 @@
     .container-tabela {
         overflow: scroll;
     }
+}
+
+
+.mat-select-value{
+    padding-left: 15px;
+}
+
+.mat-select-arrow {
+    color:black
+}
+
+.mat-form-field.mat-focused.mat-primary .mat-select-arrow{
+    color:black
+}
+
+.mat-option-text{
+    text-align: center;
+}
+
+.mat-primary .mat-option.mat-selected:not(.mat-option-disabled){
+    color:black
 }

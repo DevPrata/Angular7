@@ -1,5 +1,5 @@
 // ng g c shared/components/bread-crumb
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter,ViewEncapsulation } from '@angular/core';
 
 interface Cabecalho {
   texto:string,
@@ -10,7 +10,8 @@ interface Cabecalho {
 @Component({
   selector: 'app-table',
   templateUrl: './table.component.html',
-  styleUrls: ['./table.component.scss']
+  styleUrls: ['./table.component.scss'],
+  encapsulation:ViewEncapsulation.None
 })
 export class TableComponent implements OnInit {
 
@@ -36,13 +37,15 @@ export class TableComponent implements OnInit {
   @Output('acao-icone')
   acaoIconeEvent: EventEmitter<Object> = new EventEmitter<Object>();
 
-  itemSelecionado = '5'
+  itemSelecionado = '05'
   selectAll = false
   selected = []
   mostrarBotao = false
   hoverIndex = -1
 
-  constructor() { }
+  constructor() {
+
+  }
 
   ngOnInit(): void {
   }
@@ -100,7 +103,7 @@ export class TableComponent implements OnInit {
   }
 
   selecionarItem(eventValue) {
-    this.itemSelecionado = eventValue
+    this.itemSelecionado = eventValue.value
     this.selectAll = false
     this.selected = []
     this.paginaAtual = 1

@@ -1,9 +1,19 @@
 <div>
     <!-- Header -->
     <div class="row linha-cabecalho no-gutters">
-        <div class="col-sm-2">
+        <div class="col-sm-8 ">
+            <small class="fonte-secundaria pequeno negrito">
+                Exibindo {{mostrandoLength()}} de {{rowsLength()}} resultados
+            </small>
+            <!--
             <small class="fonte-secundaria texto" *ngIf="itensPorPagina">
-                Exibir
+                Exibindo
+                <mat-form-field class="select-itens" >
+                    <mat-select [(value)]="itemSelecionado" id="itensPorPagina" name="itensPorPagina" (selectionChange)="selecionarItem($event)">
+                      <mat-option *ngFor="let item of itensPorPagina" [value]="item">{{item}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            
                 <select 
                     (change)="selecionarItem($event.target.value)"
                     name="itensPorPagina" 
@@ -17,8 +27,9 @@
                         {{item}}
                     </option>
                 </select> 
-                resultados
+                registros por página
             </small>
+            -->
         </div>
     </div>
 
@@ -38,7 +49,6 @@
                                     </div>
                                     <div *ngIf="coluna.icone && utilizarOrdenacao" class="cabecalho-icone mr-2">
                                         <mat-icon class="icone"> arrow_downward</mat-icon>
-                                        <!--<i-feather name="maximize-2" class="icone" ></i-feather>-->
                                     </div>
                                 </div>
                             </th>
@@ -66,7 +76,7 @@
                                 <mat-menu #appMenu="matMenu" xPosition="before" class="menu-acao icone-acao" >
                                     <ng-template matMenuContent>
                                         <button mat-menu-item>
-                                            <mat-icon style="font-size:22px;">create</mat-icon>
+                                            <mat-icon style="font-size:18px;">create</mat-icon>
                                             <span class="texto">Redial</span>
                                         </button>
                                     </ng-template>
@@ -90,12 +100,32 @@
     <!--Footer-->
 
     <div class="row linha-rodape no-gutters">
-        <div class="col-md-2 coluna-exibicao">
-            <small class="fonte-secundaria pequeno">
-                Exibindo {{mostrandoLength()}} de {{rowsLength()}} resultados
+        <div class="col-md-4 coluna-exibicao">
+            <small class="fonte-secundaria texto" *ngIf="itensPorPagina">
+                Exibindo
+                <mat-form-field class="select-itens" >
+                    <mat-select [(value)]="itemSelecionado" id="itensPorPagina" name="itensPorPagina" (selectionChange)="selecionarItem($event)">
+                      <mat-option *ngFor="let item of itensPorPagina" [value]="item">{{item}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <!--
+                <select 
+                    (change)="selecionarItem($event.target.value)"
+                    name="itensPorPagina" 
+                    id="itensPorPagina" 
+                    class="select-itens"
+                >
+                    <option 
+                        *ngFor="let item of itensPorPagina"
+                        [value]="item"
+                    >
+                        {{item}}
+                    </option>
+                </select> -->
+                registros por página
             </small>
         </div>
-        <div class="col-md-10">
+        <div class="col-md-8">
             <div class="row no-gutters justify-content-end">
                 <div class="col-md-4 coluna-paginacao">
 
