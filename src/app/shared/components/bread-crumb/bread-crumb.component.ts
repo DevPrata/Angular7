@@ -14,6 +14,7 @@ interface BreadCrumbItem {
 export class BreadCrumbComponent implements OnInit {
 
   @Input() items: Array<BreadCrumbItem> = [];
+  @Input() titulo:string = '';
 
   constructor() { }
 

@@ -19,7 +19,12 @@ export class NavbarComponent implements OnInit {
 
 
   constructor() { 
-    document.body.style.paddingLeft = '70px'
+    document.body.style.paddingLeft = '120px'
+    document.body.style.paddingRight = '50px'
+    document.body.style.paddingTop = '54px'
+
+    document.body.style.backgroundColor = '#F4F4F4'
+
   }
 
   ngOnInit(): void {

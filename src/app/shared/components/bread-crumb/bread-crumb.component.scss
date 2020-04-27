@@ -1,0 +1,22 @@
+.breadcrumb{
+    background-color: #F4F4F4;
+}
+
+.breadcrumb-item, a{
+    font-family: 'Raleway';
+    font-size:12px;
+    color:#000000;
+
+    &:hover{
+        color:#000000;
+    }
+}
+
+.active {
+    font-weight: 600;
+}
+
+.titulo-principal{
+    padding-left: 16px;
+    color:#000000;
+}

@@ -1,7 +1,10 @@
 <nav class="mb-5">
+    <div class="fonte-primaria titulo negrito titulo-principal">
+        {{titulo}}
+    </div>
     <ol class="breadcrumb">
         <li class="breadcrumb-item">
-            <a routerLink="/">Home</a>
+            <a routerLink="/">ínicio</a>
         </li>
 
         <li *ngFor="let item of items" class="breadcrumb-item" [class.active]="isTheLastItem(item)">           
