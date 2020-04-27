@@ -36,7 +36,7 @@
     <!-- Content -->
     <div class="row no-gutters">
         <div class="col-sm-12">
-            <div class="container-tabela fonte-secundaria texto">
+            <div class="container-tabela fonte-primaria texto">
                 <table> 
                     <thead (mouseover)="hoverRow(-1)" (mouseleave)="downRow">
                         <tr>
@@ -60,6 +60,7 @@
                             (mouseover)="hoverRow(i)"
                             (mouseout)="downRow"
                             :name="'tabela_' + i"
+                            class="fonte-secundaria"
                         >
                             <td class="coluna-texto" *ngFor="let col of rows[i] | keyvalue">
 
@@ -103,25 +104,11 @@
         <div class="col-md-4 coluna-exibicao">
             <small class="fonte-secundaria texto" *ngIf="itensPorPagina">
                 Exibindo
-                <mat-form-field class="select-itens" >
+                <mat-form-field class="select-itens" appearance="outline">
                     <mat-select [(value)]="itemSelecionado" id="itensPorPagina" name="itensPorPagina" (selectionChange)="selecionarItem($event)">
                       <mat-option *ngFor="let item of itensPorPagina" [value]="item">{{item}}</mat-option>
                     </mat-select>
                 </mat-form-field>
-                <!--
-                <select 
-                    (change)="selecionarItem($event.target.value)"
-                    name="itensPorPagina" 
-                    id="itensPorPagina" 
-                    class="select-itens"
-                >
-                    <option 
-                        *ngFor="let item of itensPorPagina"
-                        [value]="item"
-                    >
-                        {{item}}
-                    </option>
-                </select> -->
                 registros por página
             </small>
         </div>
@@ -130,19 +117,20 @@
                 <div class="col-md-4 coluna-paginacao">
 
                     <div class="linha-paginacao">
+                        <!--
                         <button
                             class="botao-paginacao"
                             :disabled="paginaAtual === 1"
                             (click)="trocaPagina(1)"
                         >
-                            <i-feather name="chevron-left" class="icone icone-padrao" ></i-feather>
-                        </button>
+                            <mat-icon class="icone-arrow icone-padrao" style="font-size:22px;padding-top:3px">keyboard_arrow_left</mat-icon>
+                        </button>-->
                         <button
                             class="botao-paginacao"
                             :disabled="paginaAtual === 1"
                             (click)="trocaPagina(paginaAtual - 1)"
                         >
-                            <i-feather name="chevron-left" class="icone icone-padrao" ></i-feather>
+                            <mat-icon class="icone-arrow icone-padrao" style="font-size:22px;padding-top:3px">keyboard_arrow_left</mat-icon>
                         </button>
 
                         <div class="botao-paginacao"
@@ -158,15 +146,16 @@
                             :disabled="paginaAtual === qtPaginas || qtPaginas === 0"
                             (click)="trocaPagina(paginaAtual + 1)"
                         >
-                            <i-feather name="chevron-right" class="icone icone-padrao" ></i-feather>
+                            <mat-icon class="icone-arrow icone-padrao" style="font-size:22px;padding-top:3px">keyboard_arrow_right</mat-icon>
                         </button>
+                        <!--
                         <button
                             class="botao-paginacao"
                             :disabled="paginaAtual === qtPaginas || qtPaginas === 0"
                             (click)="trocaPagina(qtPaginas)"
                         >
-                            <i-feather name="chevron-right" class="icone icone-padrao" ></i-feather>
-                        </button>
+                            <mat-icon class="icone-arrow icone-padrao" style="font-size:22px;padding-top:3px">keyboard_arrow_right</mat-icon>
+                        </button>-->
                     </div>
                 </div>
 

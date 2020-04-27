@@ -52,7 +52,7 @@ export class ListagemUsuarioComponent extends BaseResourceTabelaComponent<Usuari
       )
     })
     this.pagina = 1
-    this.qtPaginas = 5
+    this.qtPaginas = 8
     this.qtResultados = 15
   }
 

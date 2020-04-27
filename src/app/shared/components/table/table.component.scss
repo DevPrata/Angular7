@@ -41,6 +41,7 @@
             border-bottom: 2px solid #000000;
             text-align: left;
             padding-left: 10px;
+            font-weight: 500;
 
 
             &:hover{
@@ -216,6 +217,12 @@
                     border-radius: 3px;
                 }
 
+                &.icone-arrow{
+                    padding-top: 3px;
+                    height: 15px;
+                    width: 15px;                    
+                }
+
                 &.icone{
                     height: 15px;
                     width: 15px;
@@ -240,7 +247,9 @@
 
 
 .mat-select-value{
-    padding-left: 15px;
+    padding-left: 12px;
+    font-family: 'Raleway';
+    font-weight: 500;
 }
 
 .mat-select-arrow {
@@ -248,7 +257,7 @@
 }
 
 .mat-form-field.mat-focused.mat-primary .mat-select-arrow{
-    color:black
+    color:#747474
 }
 
 .mat-option-text{
@@ -257,4 +266,25 @@
 
 .mat-primary .mat-option.mat-selected:not(.mat-option-disabled){
     color:black
+}
+
+
+.mat-select-trigger {
+    min-width: 10px
+}
+
+.mat-form-field-appearance-outline .mat-form-field-infix{
+    padding-top: 6px;
+    padding-bottom: 12px;
+}
+.mat-select-panel {
+    max-height: 20px;
+}
+
+.mat-select-arrow-wrapper{
+    padding-top:8px;
+}
+.mat-select-arrow {
+    color:#747474;
+    vertical-align: sub;
 }
