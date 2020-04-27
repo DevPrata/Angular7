@@ -1,0 +1,177 @@
+
+$cor-primaria-1:white;
+$cor-primaria-4:red;
+$cor-cinza-1: #60656C;
+
+nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 75px;
+    height: 100%;
+    padding: 20px 10px;
+    background-color: $cor-primaria-1;
+    box-shadow: 3px 3px 6px #00000029;
+
+    .home{
+        margin-bottom: 35px;
+    }
+
+    .nav-list{
+        
+        .nav-item{
+            height: 50px;
+            color: #505050;
+            cursor: pointer;
+            .item-principal{
+                color: $cor-primaria-4;
+            }
+
+            &:hover{
+                color: $cor-primaria-4;
+                .icone-hover{
+                    background-color: #FDE7E9;
+                }
+            }
+
+            .icone-hover{
+                &:hover{
+                    background-color: #FDE7E9;
+                }
+            }
+            .icone {
+                border-radius: 5px;
+                width: 35px;
+                height: 35px;
+                padding: 5px;
+                display: block;
+                margin: 12px 12px;
+                
+            }
+        }
+    }    
+
+    .menu-container{
+        border-left: 2px solid #00000029;
+        visibility: hidden;
+        transition: opacity .25s ease .25s;
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 75px;
+        box-sizing: border-box;
+        width: 260px;
+        height: 100%;
+        background-color: $cor-primaria-1;
+        box-shadow: 3px 3px 6px #00000029;
+        cursor: auto;
+
+        h2 {
+            margin-bottom: 24px;
+            line-height: 24px;
+            color: #323232;
+        }
+
+
+        .menu-header{
+            height: 55px;
+            padding: 15px 20px;
+            border-bottom: 1px solid #F4F4F4;
+        }
+        .texto-principal{
+            margin-left: 15px;
+            font-weight: bold;
+            color: #323232;
+            font-size: 12px;
+        }
+
+        .menu-list{
+            padding: 15px 10px;
+            color: black;
+            cursor: pointer;
+            
+            .menu-item{
+                display: block;
+                float: left;
+                height: 43px;
+                width: 100%;
+                
+                .icone-container{
+                    display: block;
+                    float: left;
+                    width: 30px;
+                    font-size:15px;
+                    box-sizing: border-box;
+                    margin: 0;
+                    padding: 0px 4px;
+
+                    &.icone {
+                        display: block;
+                        font-size:22px;
+                        margin: 12px 17px;                
+                    }
+
+                }
+
+                .titulo-container{
+                    float: left;
+                    font-size: 12px;
+                    font-weight: 600;
+                    box-sizing: border-box;
+                    margin: 0;
+                    margin-left: 12px;
+                    padding: 17px 12px;
+                    color: $cor-cinza-1;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 575px) {
+    .nav-list .nav-item.menu:hover {
+        & > .menu-container{
+            visibility: visible;
+        }
+    }
+
+}
+@media (max-width: 575px) {
+    .nav-list .nav-item.menu.open-menu {
+        & > .menu-container{
+            visibility: visible;
+        }
+    }
+
+    nav .menu-container {
+        position: fixed;
+        top: 50px;
+        height: 100%;
+        left: 0;
+        right: 0;
+        z-index: 1;
+        border-radius: 0;
+        width: 100vw;
+        text-align: left;
+        box-shadow: inset 0 9px 9px -7px rgba(0,0,0,0.4)
+    }
+
+    nav {
+        left: 0;
+        right: 0;
+        top: auto;
+        bottom: 0;
+        height: auto;
+        width: auto;
+        padding: 5px 25px;
+    }
+
+    nav .nav-list {
+        text-align: center;
+    }
+
+    nav .nav-list li {
+        display: inline-block;
+    }
+}

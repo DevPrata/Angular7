@@ -1,8 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 interface NavBarItems {
-  text:string;
-  link?:string;
+  icone:string;
+  conteudo?:Object;
 }
 
 @Component({
@@ -15,10 +15,23 @@ export class NavbarComponent implements OnInit {
   @Input('page-title') pageTitle: string;
   @Input() items: Array<NavBarItems> = [];
 
+  menuIsOpen = false
 
-  constructor() { }
+
+  constructor() { 
+    document.body.style.paddingLeft = '70px'
+  }
 
   ngOnInit(): void {
+  }
+
+  ngOnDestroy(){
+    document.body.style.paddingLeft = "0px";
+  }
+
+
+  toggleMenu(){
+    this.menuIsOpen = !this.menuIsOpen;
   }
 
 }
