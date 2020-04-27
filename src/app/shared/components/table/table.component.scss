@@ -80,6 +80,9 @@
         tr{
             &:hover{
                 background-color: #EAEAEA;
+                .menu-acao{
+                    background-color: #EAEAEA;
+                }
             }
         }
 
@@ -117,6 +120,7 @@
                     background-color: #ED1651;
                 }
             }
+
 
             .icone-acao{
                 display: inline-block;
