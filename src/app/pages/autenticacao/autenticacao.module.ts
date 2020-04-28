@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 
-import { HomeRoutingModule } from './home-routing.module';
+import { HomeRoutingModule } from './autenticacao-routing.module';
 import { SharedModule } from "../../shared/shared.module";
 import { HomeComponent } from './home/home.component';
 
@@ -18,4 +18,4 @@ import { EsqueciSenhaModule } from "./esqueci-senha/esqueci-senha.module";
     EsqueciSenhaModule
   ]
 })
-export class HomeModule { }
+export class AutenticacaoModule { }
