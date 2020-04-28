@@ -1,7 +1,6 @@
-    <app-navbar
-    [items]="[ { icone:'account_box', conteudo: { texto: 'GESTÃO DE USUÁRIOS', itens: [ { icone: 'account_circle', texto: 'Usuários', link: 'usuarios'},{ icone: 'dns', texto: 'Perfis'} ] } }, { icone:'insert_chart', conteudo: { texto: 'LOGS DE ATIVIDADES', itens: [ { icone: 'dns', texto: 'Logs de acesso'},{ icone: 'dns', texto: 'Logs de relatorios'} ] } } ]"
+<app-navbar
+    [items]="[ { icone:'account_box', conteudo: { texto: 'GESTÃO DE USUÁRIOS', itens: [ { icone: 'account_circle', texto: 'Usuários', link: 'usuario'},{ icone: 'dns', texto: 'Perfis'} ] } }, { icone:'insert_chart',currentPage:true , conteudo: { texto: 'LOGS DE ATIVIDADES', itens: [ { icone: 'dns', texto: 'Logs de acesso'},{ icone: 'dns', texto: 'Logs de relatorios'} ] } } ]"
 ></app-navbar>
-
   
 <app-bread-crumb
   [items]="[ { text: 'logs de atividades' },{ text: 'logs de acesso' } ]"
@@ -10,7 +9,6 @@
 
 
 <div class="cartao">
-    <!--<app-input-field titulo="Buscar usuário" formControlName="login"></app-input-field>-->
     <div class="header">
         <app-input-field titulo="Buscar usuário" [searchField]="true" (search)="buscar($event)"></app-input-field>
     </div>

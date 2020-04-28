@@ -29,15 +29,14 @@ nav{
             }
 
             &:hover{
-                color: $cor-primaria-4;
                 .icone-hover{
-                    background-color: #FDE7E9;
+                    background-color: #F4F4F4;
                 }
             }
 
             .icone-hover{
                 &:hover{
-                    background-color: #FDE7E9;
+                    background-color: #F4F4F4;
                 }
             }
             .icone {
@@ -174,4 +173,10 @@ nav{
     nav .nav-list li {
         display: inline-block;
     }
+}
+
+
+.icone-active{
+    color: $cor-primaria-4;
+    background-color: #FDE7E9;
 }

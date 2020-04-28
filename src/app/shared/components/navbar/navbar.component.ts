@@ -3,6 +3,7 @@ import { Component, OnInit, Input, SimpleChanges } from '@angular/core';
 interface NavBarItems {
   icone:string;
   conteudo?:Object;
+  currentPage?: boolean;
 }
 
 @Component({
@@ -29,6 +30,7 @@ export class NavbarComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    console.log(this.items)
   }
 
 

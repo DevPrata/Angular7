@@ -13,6 +13,17 @@
     }
 }
 
+.breadcrumb-item+.breadcrumb-item::before {
+    display: inline-block;
+    padding-right: 1px;
+    color: #6c757d;
+    content: "/";
+}
+
+.breadcrumb-item+.breadcrumb-item {
+    padding-left: 1px;
+}
+
 .active {
     font-weight: 600;
 }
