@@ -1,4 +1,4 @@
-import { Component,Input, ViewEncapsulation,forwardRef, Injector } from '@angular/core';
+import { Component,Input, ViewEncapsulation,forwardRef, Injector,Output, EventEmitter } from '@angular/core';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor, NgModel,NgControl } from '@angular/forms';
 
 @Component({
@@ -26,6 +26,7 @@ export class InputField  implements ControlValueAccessor {
     @Input() titulo: string = '';
     @Input() placeholder: string;
     @Input() imaskConfig: object;
+    @Input() searchField: boolean = false;
     @Input() type = 'text';
 
 
@@ -36,10 +37,13 @@ export class InputField  implements ControlValueAccessor {
       return this.innerValue;
     }
 
+    @Output('search')
+    searchEvent: EventEmitter<String> = new EventEmitter<String>();
+
     constructor(private inj: Injector) {}
 
     ngOnInit() {
-      this.ngControl = this.inj.get(NgControl)
+      this.ngControl = null
     }
   
     writeValue(value: any) {
@@ -88,7 +92,8 @@ export class InputField  implements ControlValueAccessor {
         return null;
     }
   
-    public mustShowErrorMessage(): boolean {
+    public mustShowErrorMessage(): boolean | null {
+      if(this.ngControl === null) return null
       return this.ngControl.invalid && this.ngControl.touched
     }
   
@@ -108,6 +113,10 @@ export class InputField  implements ControlValueAccessor {
         const requiredLength = this.ngControl.errors.maxlength.requiredLength;
         return `deve ter no máximo ${requiredLength} caracteres`;
       }
+    }
+
+    search(){
+      this.searchEvent.emit(this.innerValue)
     }
 
 }

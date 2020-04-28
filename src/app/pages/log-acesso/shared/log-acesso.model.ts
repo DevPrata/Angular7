@@ -2,10 +2,12 @@ import { BaseResourceModel } from "../../../shared/models/base-resource.model";
 
 export class LogAcesso extends BaseResourceModel {
     constructor(
-      public nome?: string,
-      public email?: string,
-      public cliente?: string,
-      public status?: boolean,
+      public dataHora?: string,
+      public usuario?: string,
+      public ip?: string,
+      public dispositivo?: string,
+      public navegador?: string,
+      public localizacao?: string,
   ){
       super() // Chamando a classe base
   }

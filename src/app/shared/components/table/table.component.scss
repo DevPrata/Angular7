@@ -273,10 +273,14 @@
     min-width: 10px
 }
 
-.mat-form-field-appearance-outline .mat-form-field-infix{
-    padding-top: 6px;
-    padding-bottom: 12px;
+
+.matform{
+    & .mat-form-field-appearance-outline .mat-form-field-infix{
+        padding-top: 6px;
+        padding-bottom: 12px;
+    }
 }
+
 .mat-select-panel {
     max-height: 20px;
 }

@@ -13,21 +13,24 @@ export class ListagemLogComponent extends BaseResourceTabelaComponent<LogAcesso>
 
   cabecalho = [
     {
-      texto: 'Nome',
+      texto: 'Data e hora',
       icone: 'maximize-2'
     },
     {
-      texto: 'E-mail',
+      texto: 'Usuário',
       icone: 'maximize-2'
     },
     {
-      texto: 'Cliente',
+      texto: 'Endereço IP',
     },
     {
-      texto: 'Status'
+      texto: 'Dispositivo',
     },
     {
-      texto: 'Ações'
+      texto: 'Navegador'
+    },
+    {
+      texto: 'Localização'
     }
   ]
   
@@ -35,8 +38,6 @@ export class ListagemLogComponent extends BaseResourceTabelaComponent<LogAcesso>
     super(logAcessoService)
   }
 
-  ngOnInit(): void {
-  }
 
   protected montarTabela(objeto) {
     this.resources = []
@@ -46,16 +47,22 @@ export class ListagemLogComponent extends BaseResourceTabelaComponent<LogAcesso>
     this.resources.forEach(item => {
       this.rows.push(
         {
-          nome: item.cliente,
-          email: item.email,
-          cliente: item.nome,
-          status: item.status,
+          dataHora: item.dataHora,
+          usuario: item.usuario,
+          ip: item.ip,
+          dispositivo: item.dispositivo,
+          navegador: item.navegador,
+          localizacao: item.localizacao,
         }
       )
     })
     this.pagina = 1
     this.qtPaginas = 8
     this.qtResultados = 15
+  }
+
+  buscar(valor){
+    console.log(valor)
   }
 
 }

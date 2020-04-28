@@ -1,28 +1,34 @@
-<app-navbar
+    <app-navbar
     [items]="[ { icone:'account_box', conteudo: { texto: 'GESTÃO DE USUÁRIOS', itens: [ { icone: 'account_circle', texto: 'Usuários', link: 'usuarios'},{ icone: 'dns', texto: 'Perfis'} ] } }, { icone:'insert_chart', conteudo: { texto: 'LOGS DE ATIVIDADES', itens: [ { icone: 'dns', texto: 'Logs de acesso'},{ icone: 'dns', texto: 'Logs de relatorios'} ] } } ]"
 ></app-navbar>
 
   
 <app-bread-crumb
-  [items]="[{text: 'logs de acesso'}]"
+  [items]="[ { text: 'logs de atividades' },{ text: 'logs de acesso' } ]"
   titulo="logs de acesso"
 ></app-bread-crumb>
 
 
 <div class="cartao">
+    <!--<app-input-field titulo="Buscar usuário" formControlName="login"></app-input-field>-->
+    <div class="header">
+        <app-input-field titulo="Buscar usuário" [searchField]="true" (search)="buscar($event)"></app-input-field>
+    </div>
 
-    <app-table
-        [cabecalho]="cabecalho"
-        [rows]="rows"
-        [qtResultados]="qtResultados"
-        [pagina]="pagina"
-        [qtPaginas]="qtPaginas"
-        [utilizarOrdenacao]="true"
-        [icones]="['edit','trash']"
-        (ordena)="ordenar($event)"
-        (troca-pagina)="trocaPagina($event)"
-        (troca-elemento-pagina)="trocaElementoPagina($event)"
-    >
+    <div class="corpo">
+        <app-table
+            [cabecalho]="cabecalho"
+            [rows]="rows"
+            [qtResultados]="qtResultados"
+            [pagina]="pagina"
+            [qtPaginas]="qtPaginas"
+            [utilizarOrdenacao]="true"
+            (ordena)="ordenar($event)"
+            (troca-pagina)="trocaPagina($event)"
+            (troca-elemento-pagina)="trocaElementoPagina($event)"
+        >
 
-    </app-table>
+        </app-table>
+    </div>
+
 </div>

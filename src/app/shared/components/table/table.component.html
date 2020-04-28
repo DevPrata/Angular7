@@ -102,7 +102,7 @@
 
     <div class="row linha-rodape no-gutters">
         <div class="col-md-4 coluna-exibicao">
-            <small class="fonte-secundaria texto" *ngIf="itensPorPagina">
+            <small class="fonte-secundaria texto matform" *ngIf="itensPorPagina">
                 Exibindo
                 <mat-form-field class="select-itens" appearance="outline">
                     <mat-select [(value)]="itemSelecionado" id="itensPorPagina" name="itensPorPagina" (selectionChange)="selecionarItem($event)">

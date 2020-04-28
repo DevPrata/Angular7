@@ -9,7 +9,7 @@ export class InMemoryDatabase implements InMemoryDbService{
         ]
 
         const logsAcesso: LogAcesso[] = [
-            { id:1, nome: "Moradia", email: 'Pagamentos de Contas da Casa',cliente:'FCamara',status:true},
+            { id:1, dataHora: "28/04/2020 - 10:00:00", usuario: 'Diego Tavares dos Santos', ip: '255.255.255.255', navegador: 'Google Chrome', localizacao: 'Gonzaga, Santos - SP'},
         ]
 
         return { usuarios, logsAcesso }
