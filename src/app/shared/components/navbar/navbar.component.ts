@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, SimpleChanges } from '@angular/core';
 
 interface NavBarItems {
   icone:string;
@@ -12,9 +12,10 @@ interface NavBarItems {
 })
 export class NavbarComponent implements OnInit {
 
+
+  
   @Input('page-title') pageTitle: string;
   @Input() items: Array<NavBarItems> = [];
-
   menuIsOpen = false
 
 
@@ -29,6 +30,7 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
 
   ngOnDestroy(){
     document.body.style.paddingLeft = "0px";

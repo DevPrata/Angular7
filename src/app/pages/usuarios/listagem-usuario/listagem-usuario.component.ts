@@ -14,22 +14,42 @@ export class ListagemUsuarioComponent extends BaseResourceTabelaComponent<Usuari
   cabecalho = [
     {
       texto: 'Nome',
-      icone:'maximize-2'
+      icone: 'maximize-2'
     },
     {
       texto: 'E-mail',
-      icone:'maximize-2'
+      icone: 'maximize-2'
     },
     {
       texto: 'Cliente',
     },
     {
-      texto:'Status'
+      texto: 'Status'
     },
     {
       texto: 'Ações'
     }
   ]
+
+  teste: [
+    {
+      icone: 'account_box',
+      conteudo: {
+        texto: 'GESTÃO DE USUÁRIOS',
+        itens: [
+          {
+            icone: 'account_circle',
+            texto: 'Usuários'
+          },
+          {
+            icone: 'dns',
+            texto: 'Perfis'
+          }
+        ]
+      }
+    }
+  ]
+
 
   constructor(protected usuarioService: UsuarioService) {
     super(usuarioService)

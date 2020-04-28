@@ -10,7 +10,7 @@ import { UrlBuilderService } from "./url-builder.service";
 export abstract class BaseResourceService<T extends BaseResourceModel>{
 
     protected http: HttpClient;
-    protected urlBuilder: UrlBuilderService; 
+    protected urlBuilder: UrlBuilderService = new UrlBuilderService(); 
 
     constructor(
         protected apiPath:string, 
