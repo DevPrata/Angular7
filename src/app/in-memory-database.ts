@@ -1,6 +1,6 @@
 import { InMemoryDbService } from 'angular-in-memory-web-api'
 import { Usuario } from './pages/usuarios/shared/usuario.model'
-
+import { LogAcesso } from "./pages/log-acesso/shared/log-acesso.model";
 
 export class InMemoryDatabase implements InMemoryDbService{
     createDb() {
@@ -8,8 +8,10 @@ export class InMemoryDatabase implements InMemoryDbService{
             { id:1, nome: "Moradia", email: 'Pagamentos de Contas da Casa',cliente:'FCamara',status:true},
         ]
 
+        const logsAcesso: LogAcesso[] = [
+            { id:1, nome: "Moradia", email: 'Pagamentos de Contas da Casa',cliente:'FCamara',status:true},
+        ]
 
-
-        return { usuarios }
+        return { usuarios, logsAcesso }
     }
 }

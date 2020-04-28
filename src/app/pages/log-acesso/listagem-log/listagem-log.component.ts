@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 
 import { BaseResourceTabelaComponent } from "../../../shared/abstract/base-resource-tabela/base-resource-tabela.component";
-import { Usuario } from "../shared/usuario.model";
-import { UsuarioService } from "../shared/usuario.service";
+import { LogAcesso } from "../shared/log-acesso.model";
+import { LogAcessoService } from "../shared/log-acesso.service";
 
 @Component({
-  selector: 'app-listagem-usuario',
-  templateUrl: './listagem-usuario.component.html',
-  styleUrls: ['./listagem-usuario.component.scss']
+  selector: 'app-listagem-log',
+  templateUrl: './listagem-log.component.html',
+  styleUrls: ['./listagem-log.component.scss']
 })
-export class ListagemUsuarioComponent extends BaseResourceTabelaComponent<Usuario> {
+export class ListagemLogComponent extends BaseResourceTabelaComponent<LogAcesso> {
 
   cabecalho = [
     {
@@ -30,11 +30,13 @@ export class ListagemUsuarioComponent extends BaseResourceTabelaComponent<Usuari
       texto: 'Ações'
     }
   ]
-
-  constructor(protected usuarioService: UsuarioService) {
-    super(usuarioService)
+  
+  constructor(protected logAcessoService: LogAcessoService) { 
+    super(logAcessoService)
   }
 
+  ngOnInit(): void {
+  }
 
   protected montarTabela(objeto) {
     this.resources = []
