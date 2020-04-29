@@ -110,6 +110,15 @@ export class TableComponent implements OnInit {
     this.trocarElementoEvent.emit(this.itemSelecionado)
   }
 
+  corStatus(status,tipo){
+    const tiposDeStatus = {
+        padrao: () => status ? 'verdadeiro' : '',
+        verdadeiroOuFalso: () => status ? 'verdadeiro' : 'falso',
+        ativoInativoPendente: () => status ? 'verdadeiro' : status === null ? '' : 'falso'
+    }
+    return 'corpo-status ' + (tiposDeStatus[tipo] || tiposDeStatus['padrao'])()
+  }
+
   acaoIcone(index,iconeIndex){
     this.acaoIconeEvent.emit( { index: index, acao: iconeIndex } )
   }
@@ -125,3 +134,10 @@ export class TableComponent implements OnInit {
   }
 
 }
+
+
+enum Status {
+  padrao,
+  verdadeiroOuFalso,
+  ativoInativoPendente,
+};

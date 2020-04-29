@@ -18,6 +18,10 @@ export class LoginComponent extends BaseResourceFormComponent<Login> {
     super(injector, new Login(),loginService, Login.fromJson)
   }
 
+  ngOnInit(){
+    this.buildResourceForm()
+  }
+
   protected buildResourceForm(): void {
     this.resourceForm = this.formBuilder.group({
       login:[null, [Validators.required, Validators.minLength(2)]],

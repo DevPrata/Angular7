@@ -48,7 +48,11 @@ export class ListagemUsuarioComponent extends BaseResourceTabelaComponent<Usuari
           nome: item.cliente,
           email: item.email,
           cliente: item.nome,
-          status: item.status,
+          status: {
+            valor:item.status,
+            tipo:'verdadeiroOuFalso',
+            texto:item.statusText
+          }
         }
       )
     })

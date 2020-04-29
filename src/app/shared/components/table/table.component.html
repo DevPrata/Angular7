@@ -64,9 +64,16 @@
                         >
                             <td class="coluna-texto" *ngFor="let col of rows[i] | keyvalue">
 
-                                <div class="corpo-texto">
-                                    {{col.value}}
-                                </div>
+                                <ng-template [ngIf]="col.key === 'status'" [ngIfElse]="colPadrao">
+                                    <div  [class]="corStatus(col.value.valor,col.value.tipo)">{{col.value.texto}}</div>
+                                </ng-template>
+
+
+                                <ng-template #colPadrao>
+                                    <div class="corpo-texto">
+                                        {{col.value}}
+                                    </div>
+                                </ng-template>
 
                             </td>
 

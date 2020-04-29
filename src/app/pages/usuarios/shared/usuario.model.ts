@@ -13,4 +13,8 @@ export class Usuario extends BaseResourceModel {
   static fromJson(jsonData: any): Usuario {
       return Object.assign(new Usuario(), jsonData)
   }
+
+  get statusText(): string {
+    return this.status ? 'ATIVO' : 'INATIVO';
+  }
 }
