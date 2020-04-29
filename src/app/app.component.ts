@@ -39,7 +39,7 @@ export class AppComponent  implements OnInit{
   navbarItems = [ 
     { 
       icone:'account_box',
-      currentPage: '/usuario', 
+      currentPage: 'usuario', 
       conteudo: { 
         texto: 'GESTÃO DE USUÁRIOS', 
         itens: [ 
@@ -57,7 +57,7 @@ export class AppComponent  implements OnInit{
     }, 
     { 
       icone:'insert_chart' , 
-      currentPage: '/log-acesso',
+      currentPage: 'log-acesso',
       conteudo: { 
         texto: 'LOGS DE ATIVIDADES', 
         itens: [ 

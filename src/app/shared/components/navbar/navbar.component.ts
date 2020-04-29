@@ -40,7 +40,7 @@ export class NavbarComponent implements OnInit{
     this.router.events.pipe(
       filter(event => event instanceof NavigationStart)  
     ).subscribe((event: NavigationStart) => {
-      this.currentRoute = event.url
+      this.currentRoute = event.url.split('/')[1]
     });
   }
 
