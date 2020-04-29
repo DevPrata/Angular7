@@ -4,8 +4,7 @@
       <mat-icon class="icone item-principal"> favorite</mat-icon>
     </li>
     <li class="nav-item menu" *ngFor="let item of items">
-      <mat-icon class="icone" (click)="toggleMenu()" [class.icone-hover]="!item.currentPage" [class.icone-active]="item.currentPage"> {{item.icone}}</mat-icon>
-
+      <mat-icon class="icone" (click)="toggleMenu()" [class.icone-hover]="item.currentPage !== currentRoute" [class.icone-active]="item.currentPage === currentRoute"> {{item.icone}}</mat-icon>
       <div class="menu-container" *ngIf="item.conteudo" [ngClass]="{'open-menu': menuIsOpen}">
         <div class="menu-header">
           <h2 class="texto-principal negrito" >{{item.conteudo.texto}}</h2>

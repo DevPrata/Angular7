@@ -36,6 +36,8 @@ export class ListagemUsuarioComponent extends BaseResourceTabelaComponent<Usuari
     }
   ]
 
+
+
   constructor(protected usuarioService: UsuarioService, private router: Router) {
     super(usuarioService)
   }
