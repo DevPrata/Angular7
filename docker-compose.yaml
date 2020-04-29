@@ -1,9 +1,6 @@
-version: '2.3'
-
+version: '3'
 services:
-  angular:
-    hostname: localhost
-    container_name: angular-container
+  lopes-front:
     build: .
     ports:
-      - 80:80
+      - "8180:8080"

@@ -23,7 +23,7 @@ export class TableComponent implements OnInit {
   @Input() ordem: string = 'asc';
   @Input() cabecalho: Array<Cabecalho> = [];
   @Input() rows: Array<[]> = [];
-  @Input() icones: Array<[]> = []
+  @Input() acoes: Array<{}> = []
 
   @Output()
   ordena: EventEmitter<Object> = new EventEmitter<Object>();

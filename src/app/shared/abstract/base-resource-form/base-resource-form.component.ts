@@ -33,7 +33,9 @@ export abstract class BaseResourceFormComponent<T extends BaseResourceModel> imp
     }
 
     ngOnInit(): void {
-        this.buildResourceForm()
+        this.setCurrentAction();
+        //this.loadResource();
+        //this.buildResourceForm()
     }
 
     ngAfterContentChecked() {
@@ -55,7 +57,7 @@ export abstract class BaseResourceFormComponent<T extends BaseResourceModel> imp
     protected setCurrentAction(){
         if(this.route.snapshot.url[0].path === "new"){
             this.currentAction = "new"
-        }else{
+        }else if(this.route.snapshot.url[0].path === "edit"){
             this.currentAction = "edit"
         }
     }
@@ -79,17 +81,17 @@ export abstract class BaseResourceFormComponent<T extends BaseResourceModel> imp
     protected setPageTitle(){
         if(this.currentAction === 'new')
             this.pageTitle = this.creationPageTitle()
-        else{
+        else if(this.currentAction === 'edit'){
             this.pageTitle = this.editionPageTitle()
         }
     }
 
     protected creationPageTitle(): string {
-        return "Novo"
+        return "novo"
     }
 
     protected editionPageTitle(): string {
-        return "Edição"
+        return "edição"
     }
 
     protected createResource(){
@@ -133,6 +135,6 @@ export abstract class BaseResourceFormComponent<T extends BaseResourceModel> imp
             this.serverErrorMessages = ["Falha na comunicação com o servidor. Por favor, tente mais tarde."]
     }
 
-    protected abstract buildResourceForm (): void;
+    //protected abstract buildResourceForm (): void;
 
 }

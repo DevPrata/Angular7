@@ -2,15 +2,21 @@
     [items]="[ { icone:'account_box',currentPage:true, conteudo: { texto: 'GESTÃO DE USUÁRIOS', itens: [ { icone: 'account_circle', texto: 'Usuários', link: 'usuarios'},{ icone: 'dns', texto: 'Perfis'} ] } }, { icone:'insert_chart' , conteudo: { texto: 'LOGS DE ATIVIDADES', itens: [ { icone: 'dns', texto: 'Logs de acesso', link:'log-acesso'},{ icone: 'dns', texto: 'Logs de relatorios'} ] } } ]"
 ></app-navbar>
 
-  
-<app-bread-crumb
-  [items]="[{text: 'usuários'}]"
-  titulo="usuários"
-></app-bread-crumb>
+<div class="row">
+    <div class="col-md-10">
+        <app-bread-crumb
+        [items]="[{text: 'usuários'}]"
+        titulo="usuários"
+    ></app-bread-crumb>
+    </div>
+    <div class="col-md-2">
+        <button mat-raised-button color="primary" class="btn-entrar" routerLink="new">novo usuário</button>
+    </div>
+</div>
+
 
 
 <div class="cartao">
-
     <app-table
         [cabecalho]="cabecalho"
         [rows]="rows"
@@ -18,10 +24,11 @@
         [pagina]="pagina"
         [qtPaginas]="qtPaginas"
         [utilizarOrdenacao]="true"
-        [icones]="['edit','trash']"
+        [acoes]="[ { texto:'Editar' }, { texto:'Visualizar' }, { texto:'Inativar integração' }] "
         (ordena)="ordenar($event)"
         (troca-pagina)="trocaPagina($event)"
         (troca-elemento-pagina)="trocaElementoPagina($event)"
+        (acao-icone)="acaoIcone($event)"
     >
 
     </app-table>

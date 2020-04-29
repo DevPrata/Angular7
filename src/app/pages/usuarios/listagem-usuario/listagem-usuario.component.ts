@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { BaseResourceTabelaComponent } from "../../../shared/abstract/base-resource-tabela/base-resource-tabela.component";
 import { Usuario } from "../shared/usuario.model";
 import { UsuarioService } from "../shared/usuario.service";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-listagem-usuario',
@@ -31,7 +32,7 @@ export class ListagemUsuarioComponent extends BaseResourceTabelaComponent<Usuari
     }
   ]
 
-  constructor(protected usuarioService: UsuarioService) {
+  constructor(protected usuarioService: UsuarioService, private router: Router) {
     super(usuarioService)
   }
 
@@ -54,6 +55,14 @@ export class ListagemUsuarioComponent extends BaseResourceTabelaComponent<Usuari
     this.pagina = 1
     this.qtPaginas = 8
     this.qtResultados = 15
+  }
+
+  acaoIcone(evento){
+    if(evento.acao === 0){
+      this.router.navigate(['usuario','edit',this.resources[evento.index].id]);
+    }else if (evento.acao === 1){
+      this.router.navigate(['usuario','view',this.resources[evento.index].id]);
+    }
   }
 
 }
