@@ -18,6 +18,10 @@ export class ListagemUsuarioComponent extends BaseResourceTabelaComponent<Usuari
       icone: 'maximize-2'
     },
     {
+      texto: 'CPF/CNPJ',
+      icone: 'maximize-2'
+    },
+    {
       texto: 'E-mail',
       icone: 'maximize-2'
     },
@@ -46,6 +50,7 @@ export class ListagemUsuarioComponent extends BaseResourceTabelaComponent<Usuari
       this.rows.push(
         {
           nome: item.cliente,
+          documento: item.documento,
           email: item.email,
           cliente: item.nome,
           status: {
@@ -59,6 +64,10 @@ export class ListagemUsuarioComponent extends BaseResourceTabelaComponent<Usuari
     this.pagina = 1
     this.qtPaginas = 8
     this.qtResultados = 15
+  }
+
+  buscar(valor){
+    console.log(valor)
   }
 
   acaoIcone(evento){

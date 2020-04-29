@@ -17,6 +17,11 @@
 
 
 <div class="cartao">
+
+    <div class="header">
+        <app-input-field titulo="Buscar usuário" [searchField]="true" (search)="buscar($event)"></app-input-field>
+    </div>
+    
     <app-table
         [cabecalho]="cabecalho"
         [rows]="rows"

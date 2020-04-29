@@ -22,7 +22,7 @@
             (blur)="setTouched()"
             [imask]="imaskConfig"
         >
-        <button mat-button mat-icon-button matSuffix *ngIf="searchField" (click)="search()">
+        <button mat-button mat-icon-button matSuffix *ngIf="searchField" (click)="search()" class="search">
             <mat-icon style="font-size: 18px;">search</mat-icon>
         </button>
         <mat-icon *ngIf="type === 'password' && !mustShowErrorMessage() && ngControl !== null" matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
