@@ -6,6 +6,10 @@ nav {
     font-size: 12px;
     padding-right: 15px;
 
+    & .nav-bar{
+        border-bottom: 1px solid #F2F2F2;
+    }
+
     & .logo{
         width: 84px;
         height: 16px;

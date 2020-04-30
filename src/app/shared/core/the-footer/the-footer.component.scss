@@ -23,7 +23,8 @@ footer {
         color:#6F6F6F;
     }
 
-    &.footer-copyright{
+    .footer-copyright{
+        border-top: 1px solid #F2F2F2;
         font-size: 12px;
     }
 }
