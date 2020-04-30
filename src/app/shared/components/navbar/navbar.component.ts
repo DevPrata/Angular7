@@ -19,15 +19,8 @@ export class NavbarComponent implements OnInit{
   
   @Input('page-title') pageTitle: string;
   @Input() items: Array<NavBarItems> = [];
-  menuIsOpen = false
-  currentRoute = "string"
 
-
-  constructor(private router: Router) { 
-    this.currentRouter()
-    document.body.style.paddingLeft = '120px'
-    document.body.style.paddingRight = '50px'
-    document.body.style.paddingTop = '54px'
+  constructor() { 
 
     document.body.style.backgroundColor = '#F4F4F4'
 
@@ -36,16 +29,5 @@ export class NavbarComponent implements OnInit{
   ngOnInit(): void {
   }
 
-  currentRouter(){
-    this.router.events.pipe(
-      filter(event => event instanceof NavigationStart)  
-    ).subscribe((event: NavigationStart) => {
-      this.currentRoute = event.url.split('/')[1]
-    });
-  }
-
-  toggleMenu(){
-    this.menuIsOpen = !this.menuIsOpen;
-  }
 
 }

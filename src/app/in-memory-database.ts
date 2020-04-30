@@ -6,7 +6,7 @@ import { LogRelatorio } from './pages/log-relatorio/shared/log-relatorio.model';
 export class InMemoryDatabase implements InMemoryDbService{
     createDb() {
         const usuarios: Usuario[] = [
-            { id:1, nome: "Moradia", documento:'5031035483', email: 'Pagamentos de Contas da Casa',cliente:'FCamara', status:true, statusText: 'Texto' },
+            { id:1, nome: "Moradia", documento:'5031035483', email: 'Pagamentos de Contas da Casa',cliente:'FCamara', status:true },
         ]
 
         const logsAcesso: LogAcesso[] = [

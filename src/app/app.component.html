@@ -1,5 +1,7 @@
 <app-navbar
-    [items]="currentNavBar()"
+    [items]="[ { text: 'Visão geral', link: '' }, { text: 'Relatórios', link: 'relatorios' }, { text: 'Logs de atividades', link: 'logs-atividades' }]"
 ></app-navbar>
 
-<router-outlet></router-outlet>
+<div class="container">
+    <router-outlet></router-outlet>
+</div>
