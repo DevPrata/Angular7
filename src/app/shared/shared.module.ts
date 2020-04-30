@@ -31,7 +31,7 @@ import { NavbarComponent } from "./components/navbar/navbar.component";
     // Componentes compartilhados
     BreadCrumbComponent,
     PageHeaderComponent,
-    NavbarComponent
+    NavbarComponent,
   ]
 })
 export class SharedModule { }

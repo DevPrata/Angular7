@@ -2,6 +2,14 @@
     [items]="[ { text: 'Visão geral', link: '' }, { text: 'Relatórios', link: 'relatorios' }, { text: 'Logs de atividades', link: 'logs-atividades' }]"
 ></app-navbar>
 
-<div class="container">
-    <router-outlet></router-outlet>
+<div id="wrapper" style="height: 100vh;">
+    <div id="content-wrapper" class="d-flex flex-column">
+        <div id="content">
+            <div class="container-fluid container">
+                <router-outlet></router-outlet>
+            </div>
+        </div>
+        
+        <app-the-footer></app-the-footer>
+    </div>    
 </div>

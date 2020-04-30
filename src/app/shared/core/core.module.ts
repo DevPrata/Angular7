@@ -8,9 +8,10 @@ import { InterceptorModule } from "./interceptor/interceptor.module";
 
 import { InMemoryDatabase } from '../../in-memory-database';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { TheFooterComponent } from './the-footer/the-footer.component';
 
 @NgModule({
-  declarations: [],
+  declarations: [TheFooterComponent],
   imports: [
     BrowserAnimationsModule,
     HttpClientModule,
@@ -23,7 +24,7 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
-
+    TheFooterComponent
   ]
 })
 export class CoreModule { }
