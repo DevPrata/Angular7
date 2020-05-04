@@ -9,13 +9,14 @@ import { TableModule } from "./components/table/table.module";
 import { BreadCrumbComponent } from './components/bread-crumb/bread-crumb.component';
 import { PageHeaderComponent } from './components/page-header/page-header.component';
 import { NavbarComponent } from "./components/navbar/navbar.component";
-
+import { FilterPipe } from "./pipes/filter.pipe";
 
 @NgModule({
   declarations: [
     BreadCrumbComponent,
     PageHeaderComponent,
     NavbarComponent,
+    FilterPipe
   ],
   imports: [
     CommonModule,
@@ -32,6 +33,10 @@ import { NavbarComponent } from "./components/navbar/navbar.component";
     BreadCrumbComponent,
     PageHeaderComponent,
     NavbarComponent,
+    
+
+    //Pipes
+    FilterPipe,
   ]
 })
 export class SharedModule { }

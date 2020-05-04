@@ -7,6 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BuscaRelatorioComponent implements OnInit {
 
+  abrirLista: boolean = false
+
+  items = [
+    'Relatório 1',
+    'Relatório 2',
+    'Relatório 3',
+    'Relatório 4',
+    'Relatório 5'
+  ]
+
   constructor() { }
 
   ngOnInit(): void {
