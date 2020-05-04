@@ -31,6 +31,8 @@ import { IconsModule } from "../icons/icons.module";
     MatButtonModule,
     MatSlideToggleModule,
     FormsModule,
+    MatInputModule,
+    MatFormFieldModule,
     
     // Componentes compartilhados
     InputField,
