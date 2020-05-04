@@ -2,11 +2,25 @@
     font-family: 'Lopes';
     font-weight: 600;
     font-size:28px;
-    height: 120px;
+}
+
+.cartao-titulo{
+  height: 135px;
+
+  & p{
+    color:#6F6F6F;
+    font-size:16px;
+
+    & a{
+      color:#EB194B;
+    }
+  }
 }
 
 .cartao-busca {
+    margin: 0 auto;
     z-index:9999;
+    top: 190px;
     position: absolute;
     display: block;
     float: left;
@@ -22,6 +36,7 @@
         font-family: 'Lopes';
         font-weight: 600;
         font-size: 14px;
+        padding:5px;
         color:#EB194B;
     }
 
@@ -76,6 +91,14 @@
       font-weight: 300;  
     }
   }  
+}
+
+.lista{
+  & li{
+    padding: 15px 10px;
+    font-family: 'Lopes';
+    border-bottom: 1px solid #F2F2F2;
+  }
 }
 
 .btn{
